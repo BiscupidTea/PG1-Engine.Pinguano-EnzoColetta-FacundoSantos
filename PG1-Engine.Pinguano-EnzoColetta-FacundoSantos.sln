@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PG1-Engine.Pinguano-EnzoColetta-FacundoSantos", "PG1-Engine.Pinguano-EnzoColetta-FacundoSantos.vcxproj", "{F78A91CA-4F68-46D8-8D30-8274FE3C6212}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Debug|x64.ActiveCfg = Debug|x64
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Debug|x64.Build.0 = Debug|x64
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Debug|x86.ActiveCfg = Debug|Win32
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Debug|x86.Build.0 = Debug|Win32
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Release|x64.ActiveCfg = Release|x64
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Release|x64.Build.0 = Release|x64
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Release|x86.ActiveCfg = Release|Win32
+		{F78A91CA-4F68-46D8-8D30-8274FE3C6212}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2704FF16-B8FA-4E41-B8BC-8D3E3FA367CE}
+	EndGlobalSection
+EndGlobal
