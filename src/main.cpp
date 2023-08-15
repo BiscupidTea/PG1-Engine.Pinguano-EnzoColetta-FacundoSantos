@@ -1,59 +1,16 @@
-#include <GLFW/glfw3.h>
-#include "Window.h"
-#include "Renderer.h"
+#include "BaseGame.h"
 
-using namespace window;
-using namespace renderer;
-
-int initLibrary();
-bool isLibraryInit();
+using namespace baseEngine;
 
 int main(void)
 {
-    Window window;
-    Renderer renderer;
+    BaseGame engine;
 
-    int width = 640;
-    int height = 480;
+    engine.initEngine();
 
-    const char* windowName = "Pinguano-Engine";
+    engine.updateEngine();
 
-    GLFWmonitor* monitor = NULL;
-    GLFWwindow* share = NULL;
-
-    /* Initialize the library*/
-    initLibrary();
-
-    /* Create a windowed mode window and its OpenGL context */
-    window.initWindow(width, height, windowName, monitor, share);
-
-    /* Loop until the user closes the window */
-    while (!window.windowShouldClose(window.getWindow()))
-    {
-        /* Render here */
-        renderer.clear();
-
-        /* Swap front and back buffers */
-        renderer.swapBuffers(window.getWindow());
-
-        /* Poll for and process events */
-        renderer.pollEvents();
-    }
-
-    window.closeWindow();
+    engine.closeEngine();
 
     return 0;
-}
-
-int initLibrary()
-{
-    if (!isLibraryInit())
-    {
-        return -1;
-    }
-}
-
-bool isLibraryInit()
-{
-    return glfwInit();
 }

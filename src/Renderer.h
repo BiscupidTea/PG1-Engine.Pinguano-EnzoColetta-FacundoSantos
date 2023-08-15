@@ -3,9 +3,12 @@
 
 namespace renderer
 {
+	/// <summary>
+	/// Class Renderer
+	/// </summary>
 	class Renderer
 	{
-	public:
+		public:
 
 		/// <summary>
 		/// Clear screen
