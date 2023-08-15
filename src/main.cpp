@@ -1,11 +1,17 @@
 #include <GLFW/glfw3.h>
 #include "Window.h"
+#include "Renderer.h"
 
 using namespace window;
+using namespace renderer;
+
+int initLibrary();
+bool isLibraryInit();
 
 int main(void)
 {
     Window window;
+    Renderer renderer;
 
     int width = 640;
     int height = 480;
@@ -15,9 +21,8 @@ int main(void)
     GLFWmonitor* monitor = NULL;
     GLFWwindow* share = NULL;
 
-    /* Initialize the library */
-    if (!glfwInit())
-        return -1;
+    /* Initialize the library*/
+    initLibrary();
 
     /* Create a windowed mode window and its OpenGL context */
     window.initWindow(width, height, windowName, monitor, share);
@@ -26,16 +31,29 @@ int main(void)
     while (!window.windowShouldClose(window.getWindow()))
     {
         /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT);
+        renderer.clear();
 
         /* Swap front and back buffers */
-        glfwSwapBuffers(window.getWindow());
+        renderer.swapBuffers(window.getWindow());
 
         /* Poll for and process events */
-        glfwPollEvents();
+        renderer.pollEvents();
     }
 
     window.closeWindow();
 
     return 0;
+}
+
+int initLibrary()
+{
+    if (!isLibraryInit())
+    {
+        return -1;
+    }
+}
+
+bool isLibraryInit()
+{
+    return glfwInit();
 }

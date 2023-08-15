@@ -6,15 +6,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\BaseGame.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="src\Window.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Renderer.h">
       <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>

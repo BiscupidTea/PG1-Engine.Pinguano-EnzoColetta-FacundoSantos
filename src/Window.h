@@ -8,11 +8,11 @@ namespace window
 	/// </summary>
 	class Window
 	{
-	private:
+		private:
 
 		GLFWwindow* window;
 
-	public:
+		public:
 
 		/// <summary>
 		/// Initialize the window.
@@ -41,7 +41,6 @@ namespace window
 		/// </summary>
 		/// <returns></returns>
 		GLFWwindow* getWindow();
-
 	};
 }
 
