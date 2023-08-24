@@ -31,6 +31,8 @@ namespace baseEngine
 
     void BaseGame::updateEngine()
     {
+        //Separate in functions
+        //***********************************************************************
         const char* vertexShaderSource = R"HERE(
             #version 330 core
             
@@ -124,6 +126,7 @@ namespace baseEngine
         glEnableVertexAttribArray(0);
 
         glBindBuffer(GL_ARRAY_BUFFER, 0);
+        //***********************************************************************
 
         /* Loop until the user closes the window */
         while (!window.windowShouldClose(window.getWindow()))
@@ -132,9 +135,12 @@ namespace baseEngine
             glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             renderer.clear();
 
+            //Separate in functions
+            //***********************************************************************
             glUseProgram(shaderProgram);
             glBindVertexArray(VAO);
             glDrawArrays(GL_TRIANGLES, 0, 3);
+            //***********************************************************************
 
             /* Swap front and back buffers */
             renderer.swapBuffers(window.getWindow());
@@ -143,8 +149,11 @@ namespace baseEngine
             renderer.pollEvents();
         }
 
+        //Separate in functions
+        //***********************************************************************
         glDeleteVertexArrays(1, &VAO);
         glDeleteBuffers(1, &VBO);
+        //***********************************************************************
     }
 
     void BaseGame::closeEngine()
