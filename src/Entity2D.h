@@ -1,5 +1,12 @@
 #pragma once
-class Entity2D
+#include "Entity.h"
+
+using namespace Entity;
+
+class Entity2D : public Entity
 {
+	public:
+	
+
 };
 

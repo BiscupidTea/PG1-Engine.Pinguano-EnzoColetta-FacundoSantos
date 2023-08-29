@@ -7,7 +7,7 @@ namespace Entity
 {
 	class Entity
 	{
-		private:
+		protected:
 
 		Vector3 position;
 		Vector3 scale;

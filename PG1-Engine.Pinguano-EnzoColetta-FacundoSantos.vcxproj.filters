@@ -18,13 +18,11 @@
     <ClCompile Include="src\BaseGame.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
+    <ClCompile Include="src\Entity.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Entity2D.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Shape.cpp">
+    <ClCompile Include="src\Entity2D.cpp" />
+    <ClCompile Include="src\Shape.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,16 +36,14 @@
     <ClInclude Include="src\BaseGame.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
+    <ClInclude Include="src\Entity.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Entity2D.h">
+    <ClInclude Include="src\Vectors.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Shape.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector4.h">
+    <ClInclude Include="src\Entity2D.h" />
+    <ClInclude Include="src\Shape.h">
       <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
