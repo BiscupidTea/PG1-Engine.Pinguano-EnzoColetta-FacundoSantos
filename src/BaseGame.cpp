@@ -51,7 +51,7 @@ namespace baseEngine
             
             void main()
             {
-                FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0);
+                FragColor = vec4(1.0f, 0.5f, 0.4f, 1.0);
             }        
         )HERE";
 
@@ -103,10 +103,22 @@ namespace baseEngine
 
         float vertices[] = 
         {
-           -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f,  0.5f, 0.0f
+            0.5f,  0.5f, 0.0f,  // top right
+            0.5f, -0.5f, 0.0f,  // bottom right
+           -0.5f, -0.5f, 0.0f,  // bottom left
+           -0.5f,  0.5f, 0.0f   // top left 
         };
+
+        unsigned int indices[] = 
+        {
+            0, 1, 3,
+            1, 2, 3 
+        };
+
+        unsigned int EBO; //Element Buffer Object.
+        glGenBuffers(1, &EBO);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
         unsigned int VBO; //Vertex Buffer Object.
         unsigned int VAO; //Vertex Array Object.
@@ -139,7 +151,9 @@ namespace baseEngine
             //***********************************************************************
             glUseProgram(shaderProgram);
             glBindVertexArray(VAO);
-            glDrawArrays(GL_TRIANGLES, 0, 3);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+            glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+            //glDrawArrays(GL_TRIANGLES, 0, 3);
             //***********************************************************************
 
             /* Swap front and back buffers */
