@@ -1,8 +1,20 @@
-#include <GL/glew.h>
 #include "Shape.h"
 
 namespace shape
 {
+	void Shape::initShape()
+	{
+		initVertex();
+
+		initIndex();
+
+		initElementBufferObject();
+
+		initVertexArrayObject();
+
+		initVertexBufferObject();
+	}
+
 	void Shape::initVertex()
 	{
 		vertex[0] = 0.5f;
@@ -33,25 +45,21 @@ namespace shape
 		index[5] = 3;
 	}
 
-	void Shape::initElementBuffer(unsigned int index[])
+	void Shape::initElementBufferObject()
 	{
-		unsigned int EBO; //Element Buffer Object.
-
 		glGenBuffers(1, &EBO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(index), index, GL_STATIC_DRAW);
 	}
 
 	void Shape::initVertexArrayObject()
-	{
-		unsigned int VAO; //Vertex Array Object.        
+	{     
 		glGenVertexArrays(1, &VAO);
 		glBindVertexArray(VAO);
 	}
 
-	void Shape::initVertexBufferObject(float vertex[])
+	void Shape::initVertexBufferObject()
 	{
-		unsigned int VBO; //Vertex Buffer Object.
 		glGenBuffers(1, &VBO);
 		glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
@@ -59,5 +67,17 @@ namespace shape
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
+
+	void Shape::bindVertexAndBuffer()
+	{
+		glBindVertexArray(VAO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	}
+
+	void Shape::deleteVertexAndBuffer()
+	{
+		glDeleteVertexArrays(1, &VAO);
+		glDeleteBuffers(1, &VBO);
 	}
 }

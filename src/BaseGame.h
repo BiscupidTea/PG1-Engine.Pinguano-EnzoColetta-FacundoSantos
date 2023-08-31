@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Shape.h"
 #include "Window.h"
 #include "Renderer.h"
 
+using namespace shape;
 using namespace window;
 using namespace renderer;
 
@@ -17,6 +19,7 @@ namespace baseEngine
 
 		Window window;
 		Renderer renderer;
+		Shape shape;
 
 		public:
 
