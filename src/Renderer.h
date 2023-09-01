@@ -1,5 +1,11 @@
+#include "Shape.h"
 #include <GLFW/glfw3.h>
 #pragma once
+
+#include "Window.h"
+
+using namespace window;
+using namespace shape;
 
 namespace renderer
 {
@@ -8,7 +14,7 @@ namespace renderer
 	/// </summary>
 	class Renderer
 	{
-		public:
+	public:
 
 		/// <summary>
 		/// Clear screen
@@ -23,5 +29,12 @@ namespace renderer
 		/// Processes all pending events.
 		/// </summary>
 		void pollEvents();
+		/// <summary>
+		/// render screen
+		/// </summary>
+		/// <param name="window"></param>
+		/// <param name="shape"></param>
+		/// <param name="haderProgram"></param>
+		void RenderScreen(Window window, Shape shape, int shaderProgram);
 	};
 }

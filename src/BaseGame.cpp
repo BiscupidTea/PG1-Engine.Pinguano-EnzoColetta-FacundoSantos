@@ -108,22 +108,7 @@ namespace baseEngine
         /* Loop until the user closes the window */
         while (!window.windowShouldClose(window.getWindow()))
         {
-            /* Render here */
-            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-            renderer.clear();
-
-            //Separate in functions
-            //***********************************************************************
-            glUseProgram(shaderProgram);
-            shape.bindVertexAndBuffer();
-            glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-            //***********************************************************************
-
-            /* Swap front and back buffers */
-            renderer.swapBuffers(window.getWindow());
-
-            /* Poll for and process events */
-            renderer.pollEvents();
+            renderer.RenderScreen(window, shape, shaderProgram);
         }
 
         shape.deleteVertexAndBuffer();
