@@ -25,6 +25,9 @@
     <ClCompile Include="src\Shape.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="src\Entity2D.h" />
     <ClInclude Include="src\Shape.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Shader.h">
       <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
