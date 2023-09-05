@@ -60,7 +60,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basic.Shader">
+    <None Include="res\Shader\Basic.Shader">
       <Filter>Res\Shader</Filter>
     </None>
   </ItemGroup>
