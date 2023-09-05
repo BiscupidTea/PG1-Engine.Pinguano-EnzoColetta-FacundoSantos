@@ -3,10 +3,12 @@
 #include "Shape.h"
 #include "Window.h"
 #include "Renderer.h"
+#include "Shader.h"
 
 using namespace shape;
 using namespace window;
 using namespace renderer;
+using namespace shader;
 
 namespace baseEngine
 {	
@@ -20,6 +22,7 @@ namespace baseEngine
 		Window window;
 		Renderer renderer;
 		Shape shape;
+		Shader shader;
 
 		public:
 

@@ -1,33 +1,33 @@
-//#pragma once
-//#include <GL/glew.h>
-//#include <string>
-//
-//using namespace std;
-//
-//namespace Shader
-//{
-//	class Shader
-//	{
-//		private:
-//
-//			string m_filePath;
-//			unsigned int m_rendererID;
-//
-//			bool compileShader();
-//			unsigned int getUniformLocation(string& name);
-//
-//		public:
-//
-//			Shader(string& filepath);
-//			~Shader();
-//
-//			void bind() const;
-//			void unbind() const;
-//
-//			void setUniform4f(string& name, float v0, float v1, float v2, float v3);
-//
-//
-//	};
-//
-//}
+#pragma once
+#include <GL/glew.h>
+#include <string>
+#include <fstream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+struct ShaderProgramSource
+{
+	string VertexSource;
+	string FragmentSource;
+};
+
+namespace shader
+{
+	class Shader
+	{
+	private:
+
+	public:
+		unsigned int IDshader;
+
+		void initShader(const char* filepath);
+		void deleteShader();
+		ShaderProgramSource ParseShader(const string& filepath);
+		static unsigned int compileShader(unsigned int type, const string& source);
+		static unsigned int createShader(const string& vertexShader, const string& fragmentShader);
+	};
+
+}
 
