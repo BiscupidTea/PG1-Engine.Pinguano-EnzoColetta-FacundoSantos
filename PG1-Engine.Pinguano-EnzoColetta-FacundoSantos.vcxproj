@@ -38,6 +38,9 @@
     <ClInclude Include="src\Vectors.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic.Shader" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

@@ -1,10 +1,103 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
 #include "BaseGame.h"
 
 using namespace std;
 
 namespace baseEngine
 {
+    struct ShaderProgramSource
+    {
+        string VertexSource;
+        string FragmentSource;
+    };
+
+    static ShaderProgramSource ParseShader(const string& filepath)
+    {
+        ifstream stream(filepath);
+
+        enum class ShaderType
+        {
+            NONE = -1, VERTEX = 0, FRAGMENT = 1
+        };
+
+        string line;
+
+        stringstream _stringstream[2];
+
+        ShaderType type = ShaderType::NONE;
+
+        while (getline(stream, line))
+        {
+            if (line.find("#shader") != string::npos)
+            {
+                if (line.find("vertex") != string::npos)
+                { 
+                    type = ShaderType::VERTEX;
+                }
+
+                else if (line.find("fragment") != string::npos)
+                {
+                    type = ShaderType::FRAGMENT;
+                }
+            }
+
+            else
+            {
+                _stringstream[(int)type] << line << '\n';
+            }
+
+        }
+
+        return { _stringstream[0].str(), _stringstream[1].str() };
+    }
+
+    static unsigned int compileShader(unsigned int type, const string& source)
+    {
+        unsigned int _ID = glCreateShader(type);
+        const char* src = source.c_str();
+        glShaderSource(_ID, 1, &src, nullptr);
+        glCompileShader(_ID);
+
+        int result;
+        glGetShaderiv(_ID, GL_COMPILE_STATUS, &result);
+        
+        if (result == GL_FALSE)
+        {
+            int length;
+            glGetShaderiv(_ID, GL_INFO_LOG_LENGTH, &length);
+            char* message = (char*)_malloca(length * sizeof(char));
+            glGetShaderInfoLog(_ID, length, &length, message);
+
+            cout << "ERROR::FAILED TO COMPILE " << (type == GL_VERTEX_SHADER ? "VERTEX" : "FRAGMENT") << " SHADER" << endl;
+            cout << message << endl;
+
+            glDeleteShader(_ID);
+            return 0;
+        }
+
+        return _ID;
+    }
+
+    static unsigned int createShader(const string& vertexShader, const string& fragmentShader)
+    {
+        unsigned int _program = glCreateProgram();
+        unsigned int _vertexShader = compileShader(GL_VERTEX_SHADER, vertexShader);
+        unsigned int _fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentShader);
+
+        glAttachShader(_program, _vertexShader);
+        glAttachShader(_program, _fragmentShader);
+        glLinkProgram(_program);
+        glValidateProgram(_program);
+
+        glDeleteShader(_vertexShader);
+        glDeleteShader(_fragmentShader);
+
+        return _program;
+    }
+
     int BaseGame::initEngine()
     {
         int width = 640;
@@ -30,75 +123,10 @@ namespace baseEngine
 
     void BaseGame::updateEngine()
     {
-        //Separate in functions
-        //***********************************************************************
-        const char* vertexShaderSource = R"HERE(
-            #version 330 core
-            
-            layout (location = 0) in vec3 aPos;
-            
-            void main()
-            {
-               gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
-            }        
-        )HERE";
-           
-        const char* fragmentShaderSource = R"HERE(
-            #version 330 core
-            
-            out vec4 FragColor;
-            
-            void main()
-            {
-                FragColor = vec4(1.0f, 0.5f, 0.4f, 1.0);
-            }        
-        )HERE";
+        ShaderProgramSource source = ParseShader("res/Shader/Basic.Shader");
 
-        //Vertex Shader.
-        int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-        glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-        glCompileShader(vertexShader);
-
-        int  success;
-        char infoLog[512];
-        glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-
-        if (!success)
-        {
-            glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-            cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << endl;
-        }
-
-        //Fragment Shader.
-        unsigned int fragmentShader;
-        fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-        glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-        glCompileShader(fragmentShader);
-
-        glGetProgramiv(fragmentShader, GL_LINK_STATUS, &success);
-        if (!success) 
-        {
-            glGetProgramInfoLog(fragmentShader, 512, NULL, infoLog);
-            cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << endl;
-        }
-
-        //Link Shaders
-        int shaderProgram = glCreateProgram();
-        glAttachShader(shaderProgram, vertexShader);
-        glAttachShader(shaderProgram, fragmentShader);
-        glLinkProgram(shaderProgram);
-
-        glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-
-        if (!success)
-        {
-            glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-
-            cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << endl;
-        }
-
-        glDeleteShader(vertexShader);
-        glDeleteShader(fragmentShader);
+        unsigned int shader = createShader(source.VertexSource, source.FragmentSource);
+        glUseProgram(shader);
 
         //Shape
         //***********************************************************************
@@ -108,7 +136,7 @@ namespace baseEngine
         /* Loop until the user closes the window */
         while (!window.windowShouldClose(window.getWindow()))
         {
-            renderer.RenderScreen(window, shape, shaderProgram);
+            renderer.RenderScreen(window, shape, shader);
         }
 
         shape.deleteVertexAndBuffer();

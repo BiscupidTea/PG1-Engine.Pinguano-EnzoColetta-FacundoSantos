@@ -4,6 +4,12 @@
     <Filter Include="Src">
       <UniqueIdentifier>{3c7a53be-e081-41ec-be03-bdb9e7f83334}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Res">
+      <UniqueIdentifier>{e8415925-1ea7-48c7-9404-218dbafe7450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Res\Shader">
+      <UniqueIdentifier>{8fa5aa9c-d326-41c3-90eb-994834370889}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -52,5 +58,10 @@
     <ClInclude Include="src\Shader.h">
       <Filter>Src</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic.Shader">
+      <Filter>Res\Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>
