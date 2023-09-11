@@ -10,6 +10,16 @@ namespace shader
 		IDshader = createShader(source.VertexSource, source.FragmentSource);
 		glUseProgram(IDshader);
 	}
+	
+	//DEFINIR_EN_GRUPO
+	//*************************************************************************************
+	void Shader::color(float red, float green, float blue, float alpha, const char* shaderValueName)
+	{
+		int location = glGetUniformLocation(IDshader, shaderValueName);
+		errorLog.ShaderLocationError(location);
+		glUniform4f(location, red, green, blue, alpha);
+	}
+	//*************************************************************************************
 
 	void Shader::deleteShader()
 	{

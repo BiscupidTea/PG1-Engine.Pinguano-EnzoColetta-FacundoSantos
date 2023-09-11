@@ -32,6 +32,11 @@ namespace baseEngine
 		shape.initShape();
 		//***********************************************************************
 
+		//Choose the color of the figure
+		//***********************************************************************
+		shader.color(0.7f, 0.1f, 0.8f, 1.0f, "u_Color");
+		//***********************************************************************
+
 		/* Loop until the user closes the window */
 		while (!window.windowShouldClose(window.getWindow()))
 		{

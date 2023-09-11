@@ -23,6 +23,16 @@ namespace errorLog
 		}
 	}
 
+	void ErrorLog::ShaderLocationError(int location)
+	{
+		_ASSERT(location != -1);
+
+		if (location == -1)
+		{
+			cout << "Error in the shader location name." << endl;
+		}
+	}
+
 	void ErrorLog::GLClearError()
 	{
 		while (glGetError() != GL_NO_ERROR);
