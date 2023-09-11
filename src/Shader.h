@@ -23,11 +23,13 @@ namespace shader
 
 		ErrorLog errorLog;
 
+		const char* shaderColorVulueName;
+
 	public:
 		unsigned int IDshader;
 
 		void initShader(const char* filepath);
-		void color(float red, float green, float blue, float alpha, const char* shaderValueName);
+		void color(float red, float green, float blue, float alpha);
 		void deleteShader();
 		ShaderProgramSource ParseShader(const string& filepath);
 		static unsigned int compileShader(unsigned int type, const string& source);

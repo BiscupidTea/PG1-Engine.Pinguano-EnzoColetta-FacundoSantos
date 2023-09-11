@@ -13,9 +13,10 @@ namespace shader
 	
 	//DEFINIR_EN_GRUPO
 	//*************************************************************************************
-	void Shader::color(float red, float green, float blue, float alpha, const char* shaderValueName)
+	void Shader::color(float red, float green, float blue, float alpha)
 	{
-		int location = glGetUniformLocation(IDshader, shaderValueName);
+		shaderColorVulueName = "u_Color";
+		int location = glGetUniformLocation(IDshader, shaderColorVulueName);
 		errorLog.ShaderLocationError(location);
 		glUniform4f(location, red, green, blue, alpha);
 	}

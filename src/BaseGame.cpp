@@ -34,7 +34,7 @@ namespace baseEngine
 
 		//Choose the color of the figure
 		//***********************************************************************
-		shader.color(0.7f, 0.1f, 0.8f, 1.0f, "u_Color");
+		shader.color(0.7f, 0.1f, 0.8f, 1.0f);
 		//***********************************************************************
 
 		/* Loop until the user closes the window */
