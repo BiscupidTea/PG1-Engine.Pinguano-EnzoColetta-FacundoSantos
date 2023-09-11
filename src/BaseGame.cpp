@@ -5,7 +5,7 @@ using namespace std;
 
 namespace baseEngine
 {
-	int BaseGame::initEngine()
+	void BaseGame::initEngine()
 	{
 		int width = 640;
 		int height = 480;
@@ -15,17 +15,12 @@ namespace baseEngine
 		GLFWmonitor* monitor = NULL;
 		GLFWwindow* share = NULL;
 
-		if (!glfwInit())
-		{
-			return -1;
-		}
+		errorLog.CheckGlfwInit();
 
 		window.initWindow(width, height, windowName, monitor, share);
 
-		if (glewInit() != GLEW_OK)
-		{
-			cout << "Error to start glew." << endl;
-		}
+		errorLog.CheckGlewInit();
+
 		shader.initShader("res/Shader/Basic.Shader");
 	}
 

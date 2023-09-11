@@ -4,11 +4,13 @@
 #include "Window.h"
 #include "Renderer.h"
 #include "Shader.h"
+#include "ErrorLog/ErrorLog.h"
 
 using namespace shape;
 using namespace window;
 using namespace renderer;
 using namespace shader;
+using namespace errorLog;
 
 namespace baseEngine
 {	
@@ -23,6 +25,7 @@ namespace baseEngine
 		Renderer renderer;
 		Shape shape;
 		Shader shader;
+		ErrorLog errorLog;
 
 		public:
 
@@ -30,7 +33,7 @@ namespace baseEngine
 		/// Initialize the engine.
 		/// </summary>
 		/// <returns>If the engine is on or off</returns>
-		int initEngine();
+		void initEngine();
 		/// <summary>
 		/// Core loop of the engine.
 		/// </summary>

@@ -1,11 +1,12 @@
 #include "Shape.h"
+#include "Window.h"
+#include "ErrorLog/ErrorLog.h"
 #include <GLFW/glfw3.h>
 #pragma once
 
-#include "Window.h"
-
 using namespace window;
 using namespace shape;
+using namespace errorLog;
 
 namespace renderer
 {
@@ -14,7 +15,11 @@ namespace renderer
 	/// </summary>
 	class Renderer
 	{
-	public:
+		private:
+
+			ErrorLog errorLog;
+
+		public:
 
 		/// <summary>
 		/// Clear screen
