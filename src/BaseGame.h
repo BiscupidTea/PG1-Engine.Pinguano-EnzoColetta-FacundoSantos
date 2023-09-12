@@ -33,7 +33,7 @@ namespace baseEngine
 		/// Initialize the engine.
 		/// </summary>
 		/// <returns>If the engine is on or off</returns>
-		void initEngine();
+		void initEngine(int width, int height, const char* windowName);
 		/// <summary>
 		/// Core loop of the engine.
 		/// </summary>

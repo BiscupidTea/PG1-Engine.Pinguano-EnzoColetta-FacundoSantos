@@ -5,13 +5,8 @@ using namespace std;
 
 namespace baseEngine
 {
-	void BaseGame::initEngine()
+	void BaseGame::initEngine(int width, int height, const char* windowName)
 	{
-		int width = 640;
-		int height = 480;
-
-		const char* windowName = "Pinguano-Engine";
-
 		GLFWmonitor* monitor = NULL;
 		GLFWwindow* share = NULL;
 
