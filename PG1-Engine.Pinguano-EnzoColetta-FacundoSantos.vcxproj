@@ -33,6 +33,7 @@
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\Entity2D.h" />
     <ClInclude Include="src\ErrorLog.h" />
+    <ClInclude Include="src\glm_math.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Shape.h" />
@@ -116,7 +117,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src;$(SolutionDir)resources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\glm\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src;$(SolutionDir)resources</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
