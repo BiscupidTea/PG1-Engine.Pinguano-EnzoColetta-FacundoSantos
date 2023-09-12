@@ -1,0 +1,21 @@
+#include "BaseGame.h"
+
+using namespace baseEngine;
+
+int main(void)
+{
+    int width = 640;
+    int height = 480;
+
+    const char* windowName = "Pinguano-Engine";
+
+    BaseGame engine;
+
+    engine.initEngine(width, height, windowName);
+
+    engine.updateEngine();
+
+    engine.closeEngine();
+
+    return 0;
+}

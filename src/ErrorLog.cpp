@@ -2,6 +2,11 @@
 
 using namespace std;
 
+#define ASSERT(x) if (!(x)) __debugbreak();
+#define GLCall(x) errorLog.GLClearError();\
+				x;\
+				ASSERT(errorLog.GLLogCall(#x, __FILE__, __LINE__))
+
 namespace errorLog
 {
 	int ErrorLog::CheckGlfwInit()
@@ -25,12 +30,12 @@ namespace errorLog
 
 	void ErrorLog::ShaderLocationError(int location)
 	{
-		_ASSERT(location != -1);
+		//ASSERT(location != -1);
 
-		if (location == -1)
-		{
-			cout << "Error in the shader location name." << endl;
-		}
+		//if (location == -1)
+		//{
+		//	cout << "Error in the shader location name." << endl;
+		//}
 	}
 
 	void ErrorLog::GLClearError()
