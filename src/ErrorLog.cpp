@@ -30,12 +30,12 @@ namespace errorLog
 
 	void ErrorLog::ShaderLocationError(int location)
 	{
-		//ASSERT(location != -1);
+		ASSERT(location != -1);
 
-		//if (location == -1)
-		//{
-		//	cout << "Error in the shader location name." << endl;
-		//}
+		if (location == -1)
+		{
+			cout << "Error in the shader location name." << endl;
+		}
 	}
 
 	void ErrorLog::GLClearError()
