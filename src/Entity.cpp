@@ -38,4 +38,15 @@ namespace Entity
 		this->rotation.z = rotarion.z;
 		this->rotation.w = rotarion.w;
 	}
+
+	void Entity::setColor(Vector4 rgba)
+	{
+		color = rgba;
+	}
+
+	Vector4 Entity::getColor()
+	{
+		return color;
+	}
+
 }

@@ -5,7 +5,7 @@ using namespace std;
 
 namespace baseEngine
 {
-	void BaseGame::initEngine(int width, int height, const char* windowName)
+	BaseGame::BaseGame(int width, int height, const char* windowName)
 	{
 		GLFWmonitor* monitor = NULL;
 		GLFWwindow* share = NULL;
@@ -17,6 +17,12 @@ namespace baseEngine
 		errorLog.CheckGlewInit();
 
 		shader.initShader("res/Shader/Basic.Shader");
+	}
+
+	BaseGame::~BaseGame()
+	{
+		shader.deleteShader();
+		window.closeWindow();
 	}
 
 	void BaseGame::updateEngine()
@@ -39,11 +45,5 @@ namespace baseEngine
 		}
 
 		shape.deleteVertexAndBuffer();
-	}
-
-	void BaseGame::closeEngine()
-	{
-		shader.deleteShader();
-		window.closeWindow();
 	}
 }

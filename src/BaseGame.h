@@ -13,13 +13,13 @@ using namespace shader;
 using namespace errorLog;
 
 namespace baseEngine
-{	
+{
 	/// <summary>
 	/// Class BaseGame
 	/// </summary>
 	class BaseGame
 	{
-		private:
+	private:
 
 		Window window;
 		Renderer renderer;
@@ -27,20 +27,13 @@ namespace baseEngine
 		Shader shader;
 		ErrorLog errorLog;
 
-		public:
+	public:
 
-		/// <summary>
-		/// Initialize the engine.
-		/// </summary>
-		/// <returns>If the engine is on or off</returns>
-		void initEngine(int width, int height, const char* windowName);
+		BaseGame(int width, int height, const char* windowName);
+		~BaseGame();
 		/// <summary>
 		/// Core loop of the engine.
 		/// </summary>
 		void updateEngine();
-		/// <summary>
-		/// Close engine.
-		/// </summary>
-		void closeEngine();
 	};
 }
