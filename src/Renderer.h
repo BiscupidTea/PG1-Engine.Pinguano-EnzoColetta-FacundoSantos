@@ -1,6 +1,6 @@
 #include "Shape.h"
 #include "Window.h"
-#include "ErrorLog/ErrorLog.h"
+#include "ErrorLog.h"
 #include <GLFW/glfw3.h>
 #pragma once
 

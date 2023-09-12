@@ -4,7 +4,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include "ErrorLog/ErrorLog.h"
+#include "ErrorLog.h"
 
 using namespace std;
 using namespace errorLog;

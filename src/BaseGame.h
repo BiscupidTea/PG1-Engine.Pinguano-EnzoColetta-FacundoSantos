@@ -4,7 +4,7 @@
 #include "Window.h"
 #include "Renderer.h"
 #include "Shader.h"
-#include "ErrorLog/ErrorLog.h"
+#include "ErrorLog.h"
 
 using namespace shape;
 using namespace window;

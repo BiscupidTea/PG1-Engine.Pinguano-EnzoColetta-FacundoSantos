@@ -1,4 +1,4 @@
-#include "ErrorLog/ErrorLog.h"
+#include "ErrorLog.h"
 
 using namespace std;
 

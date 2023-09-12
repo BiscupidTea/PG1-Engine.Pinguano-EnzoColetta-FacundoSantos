@@ -10,14 +10,8 @@
     <Filter Include="Res\Shader">
       <UniqueIdentifier>{8fa5aa9c-d326-41c3-90eb-994834370889}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Errors">
-      <UniqueIdentifier>{5b76dea1-851d-437d-8e9e-b45b99183c12}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Window.cpp">
       <Filter>Src</Filter>
     </ClCompile>
@@ -37,8 +31,8 @@
     <ClCompile Include="src\Shader.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="src\ErrorLog\ErrorLog.cpp">
-      <Filter>Src\Errors</Filter>
+    <ClCompile Include="src\ErrorLog.cpp">
+      <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,8 +58,8 @@
     <ClInclude Include="src\Shader.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="src\ErrorLog\ErrorLog.h">
-      <Filter>Src\Errors</Filter>
+    <ClInclude Include="src\ErrorLog.h">
+      <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
