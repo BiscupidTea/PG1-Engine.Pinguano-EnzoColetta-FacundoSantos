@@ -7,8 +7,14 @@
 
 namespace renderer
 {
+<<<<<<< HEAD
 	void Renderer::clear()
 	{
+=======
+	void Renderer::clearScreen()
+	{
+		GLCall(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
+>>>>>>> parent of 88bb22a... half added draw shape
 		GLCall(glClear(GL_COLOR_BUFFER_BIT));
 	}
 
@@ -24,9 +30,13 @@ namespace renderer
 
 	void Renderer::RenderScreen(Window window, Shape shape, int shaderProgram)
 	{
+<<<<<<< HEAD
 		/* Render here */
 		GLCall(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 		clear();
+=======
+		clearScreen();
+>>>>>>> parent of 88bb22a... half added draw shape
 
 		//Separate in functions
 		//***********************************************************************

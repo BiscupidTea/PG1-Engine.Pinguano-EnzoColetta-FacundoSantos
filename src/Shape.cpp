@@ -80,4 +80,52 @@ namespace shape
 		glDeleteVertexArrays(1, &VAO);
 		glDeleteBuffers(1, &VBO);
 	}
+<<<<<<< HEAD
+=======
+
+	void Shape::createTriangle(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3)
+	{
+		vertex[0] = vertex1.x;
+		vertex[1] = vertex1.y;
+		vertex[2] = vertex1.z;
+
+		vertex[3] = vertex2.x;
+		vertex[4] = vertex2.y;
+		vertex[5] = vertex2.z;
+
+		vertex[6] = vertex3.x;
+		vertex[7] = vertex3.y;
+		vertex[8] = vertex3.z;
+
+		initIndexTriangle();
+		initShape();
+	}
+
+	void Shape::createRectangle(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3, Vector3 vertex4)
+	{
+		vertex[0] = vertex1.x;
+		vertex[1] = vertex1.y;
+		vertex[2] = vertex1.z;
+
+		vertex[3] = vertex2.x;
+		vertex[4] = vertex2.y;
+		vertex[5] = vertex2.z;
+
+		vertex[6] = vertex3.x;
+		vertex[7] = vertex3.y;
+		vertex[8] = vertex3.z;
+
+		vertex[9] = vertex4.x;
+		vertex[10] = vertex4.y;
+		vertex[11] = vertex4.z;
+
+		initIndexRectangle();
+		initShape();
+	}
+
+	void Shape::drawShape()
+	{
+		bindVertexAndBuffer();
+	}
+>>>>>>> parent of 88bb22a... half added draw shape
 }
