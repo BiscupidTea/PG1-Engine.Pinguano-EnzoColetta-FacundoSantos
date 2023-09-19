@@ -22,8 +22,6 @@ namespace shape
 	public:
 
 		void initShape();
-		void initVertex();
-		void initIndex();
 		void initElementBufferObject();
 		void initVertexArrayObject();
 		void initVertexBufferObject();

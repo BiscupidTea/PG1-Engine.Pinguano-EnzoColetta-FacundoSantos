@@ -4,10 +4,6 @@ namespace shape
 {
 	void Shape::initShape()
 	{
-		initVertex();
-
-		initIndex();
-
 		initElementBufferObject();
 
 		initVertexArrayObject();
