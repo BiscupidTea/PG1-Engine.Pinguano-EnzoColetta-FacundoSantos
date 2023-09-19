@@ -15,26 +15,7 @@ namespace shape
 		initVertexBufferObject();
 	}
 
-	void Shape::initVertex()
-	{
-		vertex[0] = 0.5f;
-		vertex[1] = 0.5f;
-		vertex[2] = 0.0f;
-
-		vertex[3] = 0.5f;
-		vertex[4] = -0.5f;
-		vertex[5] = 0.0f;
-		
-		vertex[6] = -0.5f;
-		vertex[7] = -0.5f;
-		vertex[8] = 0.0f;
-		
-		vertex[9] = -0.5f;
-		vertex[10] = 0.5f;
-		vertex[11] = 0.0f;
-	}
-
-	void Shape::initIndex()
+	void Shape::initIndexRectangle()
 	{
 		index[0] = 0;
 		index[1] = 1;
@@ -43,6 +24,13 @@ namespace shape
 		index[3] = 1;
 		index[4] = 2;
 		index[5] = 3;
+	}
+
+	void Shape::initIndexTriangle()
+	{
+		index[0] = 0;
+		index[1] = 1;
+		index[2] = 3;
 	}
 
 	void Shape::initElementBufferObject()
@@ -80,8 +68,6 @@ namespace shape
 		glDeleteVertexArrays(1, &VAO);
 		glDeleteBuffers(1, &VBO);
 	}
-<<<<<<< HEAD
-=======
 
 	void Shape::createTriangle(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3)
 	{
@@ -127,5 +113,4 @@ namespace shape
 	{
 		bindVertexAndBuffer();
 	}
->>>>>>> parent of 88bb22a... half added draw shape
 }

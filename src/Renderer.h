@@ -24,11 +24,7 @@ namespace renderer
 		/// <summary>
 		/// Clear screen
 		/// </summary>
-<<<<<<< HEAD
-		void clear();
-=======
 		void clearScreen();
->>>>>>> parent of 88bb22a... half added draw shape
 		/// <summary>
 		/// Swap the front and back buffer of the specified window.
 		/// </summary>

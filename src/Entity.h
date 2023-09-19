@@ -12,7 +12,6 @@ namespace Entity
 		Vector3 position;
 		Vector3 scale;
 		Vector4 rotation;
-		Vector4 color;
 
 		public:
 
@@ -24,8 +23,5 @@ namespace Entity
 
 		Vector4 getRotation();
 		void setRotation(Vector4 rotarion);
-
-		void setColor(Vector4 rgba);
-		Vector4 getColor();
 	};
 }

@@ -1,6 +1,4 @@
 #include "Entity2D.h"
-<<<<<<< HEAD
-=======
 
 namespace Entity2D
 {
@@ -14,4 +12,3 @@ namespace Entity2D
 		return color;
 	}
 }
->>>>>>> parent of 88bb22a... half added draw shape
