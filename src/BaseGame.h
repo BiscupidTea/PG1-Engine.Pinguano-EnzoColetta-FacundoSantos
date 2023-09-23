@@ -1,9 +1,10 @@
 #pragma once
 
+#include "dll-Exp-Inp.h"
 #include "Shape.h"
 #include "Window.h"
-#include "Renderer.h"
 #include "Shader.h"
+#include "Renderer.h"
 #include "ErrorLog.h"
 
 using namespace shape;
@@ -17,23 +18,22 @@ namespace baseEngine
 	/// <summary>
 	/// Class BaseGame
 	/// </summary>
-	class BaseGame
+	class EXPORT BaseGame
 	{
 	private:
 
-		Window window;
-		Renderer renderer;
-		Shape shape;
-		Shader shader;
+		Renderer* renderer;
+		Window* window;
 		ErrorLog errorLog;
 
 	public:
 
 		BaseGame(int width, int height, const char* windowName);
 		~BaseGame();
-		/// <summary>
-		/// Core loop of the engine.
-		/// </summary>
-		void updateEngine();
+		void gameLoop();
+		virtual void init() = 0;
+		virtual void update() = 0;
+		virtual void exit() = 0;
+		Renderer* GetRenderer();
 	};
 }

@@ -2,6 +2,16 @@
 
 namespace Entity
 {
+	Entity::Entity(Renderer* render)
+	{
+		this->render = render;
+	}
+
+	Entity::~Entity()
+	{
+
+	}
+
 	Vector3 Entity::getPosition()
 	{
 		return position;

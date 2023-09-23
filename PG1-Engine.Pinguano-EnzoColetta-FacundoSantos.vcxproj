@@ -30,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BaseGame.h" />
+    <ClInclude Include="src\dll-Exp-Inp.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\Entity2D.h" />
     <ClInclude Include="src\ErrorLog.h" />
@@ -115,14 +116,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;MAKEDLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\glm\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src;$(SolutionDir)resources</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\lib-vc2019;$(SolutionDir)src;$(SolutionDir)resources;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\lib-vc2019;$(SolutionDir)src;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -132,7 +133,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;MAKEDLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src;$(SolutionDir)resources</AdditionalIncludeDirectories>
     </ClCompile>
@@ -141,7 +142,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\lib-vc2019;$(SolutionDir)src;$(SolutionDir)resources;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\lib-vc2019;$(SolutionDir)src;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

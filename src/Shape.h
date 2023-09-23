@@ -1,41 +1,27 @@
 #pragma once
+#include "dll-Exp-Inp.h"
 #include <GL/glew.h>
-#include "Vectors.h"
 #include "Entity2D.h"
 
-using namespace vectors;
 using namespace Entity2D;
 
 namespace shape
 {
-	class Shape : Entity2D
+	class EXPORT Shape final : public Entity2D
 	{
 	private:
 
-		float vertex[12];
-		unsigned int index[6];
-		unsigned int EBO; //Element Buffer Object.
-		unsigned int VAO; //Vertex Array Object.
-		unsigned int VBO; //Vertex Buffer Object.
-		Vector4 color;
-
 	public:
 
-		void initShape();
-		void initElementBufferObject();
-		void initVertexArrayObject();
-		void initVertexBufferObject();
-		void bindVertexAndBuffer();
-		void deleteVertexAndBuffer();
-		void initIndexRectangle();
-		void initIndexTriangle();
+		enum typeShapes
+		{
+			Triangle,
+			Square,
+		};
 
-	public:
-
-		Shape();
+		Shape(typeShapes typeShapes, Vector4 color, Renderer* render);
 		~Shape();
-		void createTriangle(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3);
-		void createRectangle(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3, Vector3 vertex4);
-		void drawShape();
+		void createTriangle();
+		void createRectangle();
 	};
 }

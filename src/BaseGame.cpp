@@ -7,43 +7,33 @@ namespace baseEngine
 {
 	BaseGame::BaseGame(int width, int height, const char* windowName)
 	{
-		GLFWmonitor* monitor = NULL;
-		GLFWwindow* share = NULL;
-
 		errorLog.CheckGlfwInit();
 
-		window.initWindow(width, height, windowName, monitor, share);
+		window = new Window(width, height, windowName, NULL, NULL);
 
 		errorLog.CheckGlewInit();
 
-		shader.initShader("res/Shader/Basic.Shader");
+		renderer = new Renderer(window);
 	}
 
 	BaseGame::~BaseGame()
 	{
-		shader.deleteShader();
-		window.closeWindow();
+		delete window;
+		delete renderer;
 	}
 
-	void BaseGame::updateEngine()
+	void BaseGame::gameLoop()
 	{
-
-		//Shape
-		//***********************************************************************
-		shape.initShape();
-		//***********************************************************************
-
-		//Choose the color of the figure
-		//***********************************************************************
-		shader.color(0.7f, 0.1f, 0.8f, 1.0f);
-		//***********************************************************************
-
-		/* Loop until the user closes the window */
-		while (!window.windowShouldClose(window.getWindow()))
+		while (!glfwWindowShouldClose(window->getWindow()))
 		{
-			renderer.RenderScreen(window, shape, shader.IDshader);
+			renderer->StartDraw();
+			update();
+			renderer->EndDraw();
 		}
+	}
 
-		shape.deleteVertexAndBuffer();
+	Renderer* BaseGame::GetRenderer()
+	{
+		return renderer;
 	}
 }

@@ -1,3 +1,4 @@
+#include "GL/glew.h"
 #include <GLFW/glfw3.h>
 #pragma once
 
@@ -11,9 +12,17 @@ namespace window
 		private:
 
 		GLFWwindow* window;
+		int width;
+		int height;
+		const char* windowName;
+		GLFWmonitor* monitor;
+		GLFWwindow* share;
+
 
 		public:
 
+		Window(int width, int height, const char* windowName, GLFWmonitor* monitor, GLFWwindow* share);
+		~Window();
 		/// <summary>
 		/// Initialize the window.
 		/// </summary>
@@ -22,7 +31,7 @@ namespace window
 		/// <param name="windowName">Window name</param>
 		/// <param name="monitor">to change the full screen mode</param>
 		/// <param name="share">to share resources</param>
-		void initWindow(int width, int height, const char* windowName, GLFWmonitor* monitor, GLFWwindow* share);
+		void initWindow();
 		
 		/// <summary>
 		/// Calls glfwTerminate() funtion to destroy all remaining windows and cursors, reset any modified resources.

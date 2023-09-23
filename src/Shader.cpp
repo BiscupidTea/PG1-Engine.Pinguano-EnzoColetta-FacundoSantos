@@ -3,28 +3,14 @@
 
 namespace shader
 {
-	void Shader::initShader(const char* filepath)
+	Shader::Shader()
 	{
-		ShaderProgramSource source = ParseShader(filepath);
 
-		IDshader = createShader(source.VertexSource, source.FragmentSource);
-		glUseProgram(IDshader);
 	}
-	
-	//DEFINIR_EN_GRUPO
-	//*************************************************************************************
-	void Shader::color(float red, float green, float blue, float alpha)
-	{
-		shaderColorVulueName = "u_Color";
-		int location = glGetUniformLocation(IDshader, shaderColorVulueName);
-		errorLog.ShaderLocationError(location);
-		glUniform4f(location, red, green, blue, alpha);
-	}
-	//*************************************************************************************
 
-	void Shader::deleteShader()
+	Shader::~Shader()
 	{
-		glDeleteProgram(IDshader);
+		
 	}
 
 	ShaderProgramSource Shader::ParseShader(const string& filepath)
@@ -67,7 +53,7 @@ namespace shader
 		return { _stringstream[0].str(), _stringstream[1].str() };
 	}
 
-	unsigned int Shader::compileShader(unsigned int type, const string& source)
+	GLuint Shader::compileShader(unsigned int type, const string& source)
 	{
 		unsigned int _ID = glCreateShader(type);
 		const char* src = source.c_str();
@@ -94,20 +80,21 @@ namespace shader
 		return _ID;
 	}
 
-	unsigned int Shader::createShader(const string& vertexShader, const string& fragmentShader)
+	int Shader::createShader(const string& vertexShader, const string& fragmentShader)
 	{
-		unsigned int _program = glCreateProgram();
-		unsigned int _vertexShader = compileShader(GL_VERTEX_SHADER, vertexShader);
-		unsigned int _fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentShader);
+		GLuint program = glCreateProgram();
+		GLuint _vertexShader = compileShader(GL_VERTEX_SHADER, vertexShader);
+		GLuint _fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentShader);
 
-		glAttachShader(_program, _vertexShader);
-		glAttachShader(_program, _fragmentShader);
-		glLinkProgram(_program);
-		glValidateProgram(_program);
+		glAttachShader(program, _vertexShader);
+		glAttachShader(program, _fragmentShader);
+		glLinkProgram(program);
+
+		glValidateProgram(program);
 
 		glDeleteShader(_vertexShader);
 		glDeleteShader(_fragmentShader);
 
-		return _program;
+		return program;
 	}
 }
