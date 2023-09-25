@@ -22,6 +22,16 @@ namespace Entity2D
 		return color;
 	}
 
+	void Entity2D::setPosition(Vector4 pos)
+	{
+		position = pos;
+	}
+
+	Vector4 Entity2D::getPosition()
+	{
+		return position;
+	}
+
 	void Entity2D::Draw()
 	{
 		render->Draw2DEntity(VAO, indexSize, color);

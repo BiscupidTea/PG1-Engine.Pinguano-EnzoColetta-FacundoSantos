@@ -10,6 +10,7 @@ namespace renderer
 	Renderer::Renderer(Window* window)
 	{
 		this->window = window;
+
 		ShaderProgramSource source = shader.ParseShader("res/Shader/Basic.Shader");
 		shaderProgram = shader.createShader(source.VertexSource, source.FragmentSource);
 		glEnable(GL_BLEND);
@@ -21,6 +22,7 @@ namespace renderer
 	{
 
 	}
+
 	void Renderer::StartDraw()
 	{
 		GLCall(glClearColor(0.1f, 0.3f, 0.3f, 1.0f));
@@ -40,6 +42,11 @@ namespace renderer
 		glUniform4f(glGetUniformLocation(shaderProgram, "u_Color"), color.x, color.y, color.z, color.w);
 		glDrawElements(GL_TRIANGLES, sizeIndex, GL_UNSIGNED_INT, nullptr);
 		glUseProgram(0);
+	}
+
+	void Renderer::PositionEntity2D(const mat4& projection)
+	{
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "u_MVP"), 1, GL_FALSE, &projection[0][0]);
 	}
 
 	void Renderer::CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO)

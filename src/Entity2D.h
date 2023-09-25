@@ -11,6 +11,7 @@ namespace Entity2D
 	{
 	protected:
 		Vector4 color;
+		Vector4 position;
 		unsigned int VAO; //Vertex Array Object.
 
 		unsigned int VBO; //Vertex Buffer Object.
@@ -30,6 +31,9 @@ namespace Entity2D
 
 		void setColor(Vector4 rgba);
 		Vector4 getColor();
+
+		void setPosition(Vector4 position);
+		Vector4 getPosition();
 	};
 }
 
