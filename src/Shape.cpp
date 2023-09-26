@@ -2,11 +2,8 @@
 
 namespace shape
 {
-	Shape::Shape(typeShapes typeShapes, Vector4 color, Renderer* render) : Entity2D(color)
+	Shape::Shape(typeShapes typeShapes, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
 	{
-		this->color = color;
-		this->render = render;
-
 		switch (typeShapes)
 		{
 		case shape::Shape::Triangle:
@@ -57,7 +54,7 @@ namespace shape
 		indexSize = 6;
 		indexs = new int[indexSize] {
 			0, 1, 2,
-			2, 3, 0
+			1, 2, 3
 		};
 
 		atributeVertexSize = 3;

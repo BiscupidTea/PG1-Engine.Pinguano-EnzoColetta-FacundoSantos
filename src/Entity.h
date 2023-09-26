@@ -11,24 +11,31 @@ namespace Entity
 	class EXPORT Entity
 	{
 	protected:
-
 		Renderer* render;
-		Vector3 position;
-		Vector3 scale;
-		Vector4 rotation;
+		glm::mat4x4 model;
+		glm::mat4 position;
+		glm::mat4 scale;
+		glm::mat4 rotation;
+
+		Vector3 newPosition;
+		Vector3 newScale;
+		Vector3 newRotation;
 
 	public:
 
-		Entity(Renderer* render);
+		Entity(Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 		~Entity();
 
+		void setPosition(Vector3 newPosition);
 		Vector3 getPosition();
-		void setPosition(Vector3 position);
 
 		Vector3 getScale();
-		void setScale(Vector3 scale);
+		void setScale(Vector3 newScale);
 
-		Vector4 getRotation();
-		void setRotation(Vector4 rotarion);
+		void setRotationX(float newRotationX);
+		void setRotationY(float newRotationY);
+		void setRotationZ(float newRotationZ);
+
+		void UpdateTMatrix();
 	};
 }

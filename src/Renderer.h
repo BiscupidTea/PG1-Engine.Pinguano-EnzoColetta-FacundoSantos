@@ -5,6 +5,7 @@
 #include <GLFW/glfw3.h>
 #include "..\libs\glm\include\glm.hpp"
 #include "..\libs\glm\include\gtc\matrix_transform.hpp"
+#include "..\libs\glm\include\gtc\type_ptr.hpp"
 
 #pragma once
 
@@ -27,6 +28,8 @@ namespace renderer
 		Window* window;
 		Shader shader;
 		unsigned int shaderProgram;
+		glm::mat4x4 projection;
+		glm::mat4x4 view;
 
 	public:
 
@@ -44,9 +47,7 @@ namespace renderer
 		/// <summary>
 		/// Processes all pending events.
 		/// </summary>
-		void Draw2DEntity(unsigned int VAO, int sizeIndex, Vector4 color);
-
-		void PositionEntity2D(const mat4& projection);
+		void Draw2DEntity(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model);
 
 		void CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize,
 			unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);

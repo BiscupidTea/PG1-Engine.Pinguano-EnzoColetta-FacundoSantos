@@ -50,6 +50,10 @@ namespace window
 		/// </summary>
 		/// <returns></returns>
 		GLFWwindow* getWindow();
+
+		float getWidth();
+
+		float getHeight();
 	};
 }
 

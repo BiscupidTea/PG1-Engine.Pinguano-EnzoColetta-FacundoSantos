@@ -2,9 +2,9 @@
 
 namespace Entity2D
 {
-	Entity2D::Entity2D(Vector4 rgba) : Entity(render)
+	Entity2D::Entity2D(Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity(render, newPosition, newScale, newRotation)
 	{
-		color = rgba;
+		this->color = rgba;
 	}
 
 	Entity2D::~Entity2D()
@@ -22,18 +22,8 @@ namespace Entity2D
 		return color;
 	}
 
-	void Entity2D::setPosition(Vector4 pos)
-	{
-		position = pos;
-	}
-
-	Vector4 Entity2D::getPosition()
-	{
-		return position;
-	}
-
 	void Entity2D::Draw()
 	{
-		render->Draw2DEntity(VAO, indexSize, color);
+		render->Draw2DEntity(VAO, indexSize, color, model);
 	}
 }

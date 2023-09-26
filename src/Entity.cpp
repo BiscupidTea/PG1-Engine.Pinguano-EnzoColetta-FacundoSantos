@@ -2,9 +2,28 @@
 
 namespace Entity
 {
-	Entity::Entity(Renderer* render)
+	Entity::Entity(Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation)
 	{
 		this->render = render;
+
+		model = glm::mat4(1);
+		position = glm::mat4(1);
+		scale = glm::mat4(1);
+		rotation = glm::mat4(1);
+
+		setPosition(newPosition);
+
+		setRotationX(0);
+		setRotationY(0);
+		setRotationZ(0);
+		setScale({1,1,1});
+
+		setRotationX(newRotation.x);
+		setRotationY(newRotation.y);
+		setRotationZ(newRotation.z);
+		setScale(newScale);
+
+		UpdateTMatrix();
 	}
 
 	Entity::~Entity()
@@ -12,40 +31,49 @@ namespace Entity
 
 	}
 
-	Vector3 Entity::getPosition()
+	void Entity::setPosition(Vector3 newPosition)
 	{
-		return position;
+		vec3 newPositionSet = { newPosition.x, newPosition.y, newPosition.z };
+		position = translate(position, newPositionSet);
+		UpdateTMatrix();
 	}
 
-	void Entity::setPosition(Vector3 position)
+	Vector3 Entity::getPosition()
 	{
-		this->position.x = position.x;
-		this->position.y = position.y;
-		this->position.z = position.z;
+		return { position[0][3], position[1][3], position[2][3] };
+	}
+
+	void Entity::setScale(Vector3 newScale)
+	{
+		scale = glm::scale(scale, glm::vec3(newScale.x, newScale.y, scale[2][2]));
+		UpdateTMatrix();
 	}
 
 	Vector3 Entity::getScale()
 	{
-		return scale;
+		return { scale[0][0], scale[1][1], scale[2][2] };
 	}
 
-	void Entity::setScale(Vector3 scale)
+	void Entity::setRotationX(float newRotationX)
 	{
-		this->scale.x = scale.x;
-		this->scale.y = scale.y;
-		this->scale.z = scale.z;
+		rotation = glm::rotate(rotation, glm::radians(newRotationX), glm::vec3(1, 0, 0));
+		UpdateTMatrix();
 	}
 
-	Vector4 Entity::getRotation()
+	void Entity::setRotationY(float newRotationY)
 	{
-		return rotation;
+		rotation = glm::rotate(rotation, glm::radians(newRotationY), glm::vec3(0, 1, 0));
+		UpdateTMatrix();
 	}
 
-	void Entity::setRotation(Vector4 rotarion)
+	void Entity::setRotationZ(float newRotationZ)
 	{
-		this->rotation.x = rotarion.x;
-		this->rotation.y = rotarion.y;
-		this->rotation.z = rotarion.z;
-		this->rotation.w = rotarion.w;
+		rotation = glm::rotate(rotation, glm::radians(newRotationZ), glm::vec3(0, 0, 1));
+		UpdateTMatrix();
+	}
+
+	void Entity::UpdateTMatrix()
+	{
+		model = position * rotation * scale;
 	}
 }

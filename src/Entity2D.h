@@ -11,29 +11,25 @@ namespace Entity2D
 	{
 	protected:
 		Vector4 color;
-		Vector4 position;
-		unsigned int VAO; //Vertex Array Object.
+		unsigned int VAO = 0; //Vertex Array Object.
 
-		unsigned int VBO; //Vertex Buffer Object.
-		int vertexSize;
+		unsigned int VBO = 0; //Vertex Buffer Object.
+		int vertexSize = 0;
 		int atributeVertexSize = 3;
-		float* vertexPositions;
+		float* vertexPositions = 0;
 
-		unsigned int EBO; //Element Buffer Object.
-		int indexSize;
-		int* indexs;
+		unsigned int EBO = 0; //Element Buffer Object.
+		int indexSize = 0;
+		int* indexs = 0;
 
 	public:
-		Entity2D(Vector4 rgba);
+		Entity2D(Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 		~Entity2D();
 		
 		void Draw();
 
 		void setColor(Vector4 rgba);
 		Vector4 getColor();
-
-		void setPosition(Vector4 position);
-		Vector4 getPosition();
 	};
 }
 

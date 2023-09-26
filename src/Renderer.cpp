@@ -11,6 +11,10 @@ namespace renderer
 	{
 		this->window = window;
 
+		projection = glm::ortho(0.0f, window->getWidth(), 0.0f, window->getHeight(), 0.1f, 100.0f);
+		vec3 cameraPosition = vec3(0, 0, 1);
+		view = lookAt(cameraPosition, { 0,0,0 }, { 0,1,0 });
+
 		ShaderProgramSource source = shader.ParseShader("res/Shader/Basic.Shader");
 		shaderProgram = shader.createShader(source.VertexSource, source.FragmentSource);
 		glEnable(GL_BLEND);
@@ -35,18 +39,18 @@ namespace renderer
 		GLCall(glfwPollEvents());
 	}
 
-	void Renderer::Draw2DEntity(unsigned int VAO, int sizeIndex, Vector4 color)
+	void Renderer::Draw2DEntity(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model)
 	{
 		glUseProgram(shaderProgram);
+
+		unsigned int transformLoc = glGetUniformLocation(shaderProgram, "u_MVP");
+		mat4 MVP = projection * view * model;
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(MVP));
+
 		glBindVertexArray(VAO);
 		glUniform4f(glGetUniformLocation(shaderProgram, "u_Color"), color.x, color.y, color.z, color.w);
 		glDrawElements(GL_TRIANGLES, sizeIndex, GL_UNSIGNED_INT, nullptr);
 		glUseProgram(0);
-	}
-
-	void Renderer::PositionEntity2D(const mat4& projection)
-	{
-		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "u_MVP"), 1, GL_FALSE, &projection[0][0]);
 	}
 
 	void Renderer::CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO)

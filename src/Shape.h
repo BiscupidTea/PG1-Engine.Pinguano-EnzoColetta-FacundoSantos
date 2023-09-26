@@ -19,7 +19,7 @@ namespace shape
 			Square,
 		};
 
-		Shape(typeShapes typeShapes, Vector4 color, Renderer* render);
+		Shape(typeShapes typeShapes, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 		~Shape();
 		void createTriangle();
 		void createRectangle();

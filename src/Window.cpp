@@ -47,4 +47,14 @@ namespace window
 	{
 		return window;
 	}
+
+	float Window::getWidth()
+	{
+		return width;
+	}
+
+	float Window::getHeight()
+	{
+		return height;
+	}
 }

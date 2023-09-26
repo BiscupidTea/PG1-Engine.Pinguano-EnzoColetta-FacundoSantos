@@ -8,12 +8,13 @@ class Game : public BaseGame
 {
 private:
 	Shape* triangle;
-	int width;
-	int height;
 	const char* windowName;
 
 public:
-	Game(int width, int height, const char* windowName);
+	float width;
+	float height;
+
+	Game(float width, float height, const char* windowName);
 	~Game();
 	void init() override;
 	void update() override;
