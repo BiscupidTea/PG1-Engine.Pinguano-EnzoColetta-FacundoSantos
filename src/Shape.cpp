@@ -54,7 +54,7 @@ namespace shape
 		indexSize = 6;
 		indexs = new int[indexSize] {
 			0, 1, 2,
-			1, 2, 3
+			2, 3, 0
 		};
 
 		atributeVertexSize = 3;
