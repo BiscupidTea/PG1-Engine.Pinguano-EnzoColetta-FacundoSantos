@@ -1,0 +1,17 @@
+﻿  BaseGame.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\Shape.h(3,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Entity.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\Shader.h(6,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Entity2D.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\Shader.h(6,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  ErrorLog.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\ErrorLog.h(3,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Renderer.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\Shader.h(6,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Shader.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\Shader.h(6,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Shape.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\Shape.h(3,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Window.cpp
+C:\Users\Aula 2\Desktop\PG1-Engine.Pinguano-EnzoColetta-FacundoSantos\src\Window.h(1,10): fatal error C1083: No se puede abrir el archivo incluir: 'GL/glew.h': No such file or directory
+  Generando código...
