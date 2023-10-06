@@ -14,6 +14,8 @@ namespace baseEngine
 		errorLog.CheckGlewInit();
 
 		renderer = new Renderer(window);
+
+		inputSystem = new InputSystem(window->getWindow());
 	}
 
 	BaseGame::~BaseGame()

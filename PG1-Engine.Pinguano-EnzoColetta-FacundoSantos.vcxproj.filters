@@ -10,65 +10,80 @@
     <Filter Include="Res\Shader">
       <UniqueIdentifier>{8fa5aa9c-d326-41c3-90eb-994834370889}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\CoreEngine">
+      <UniqueIdentifier>{0b11736f-96f0-4ae3-bed8-0e3229a58caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Entity">
+      <UniqueIdentifier>{92102be6-c52f-42ce-87ec-1d1b83d932b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\tools">
+      <UniqueIdentifier>{5e9e4c61-cc0b-4531-9e8f-ec6bab979526}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Window.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Renderer.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BaseGame.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Entity.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shape.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Shader.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="src\ErrorLog.cpp">
-      <Filter>Src</Filter>
+    <ClCompile Include="src\BaseGame.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity.cpp">
+      <Filter>Src\Entity</Filter>
     </ClCompile>
     <ClCompile Include="src\Entity2D.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shape.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ErrorLog.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputSystem.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Window.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Renderer.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BaseGame.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Entity.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vectors.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shape.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="src\Shader.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="src\ErrorLog.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="src\BaseGame.h">
+      <Filter>Src\CoreEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\glm_math.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>Src\CoreEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\dll-Exp-Inp.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="src\Window.h">
+      <Filter>Src\CoreEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
+      <Filter>Src\Entity</Filter>
     </ClInclude>
     <ClInclude Include="src\Entity2D.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Shape.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vectors.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\glm_math.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dll-Exp-Inp.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ErrorLog.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputSystem.h">
       <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>

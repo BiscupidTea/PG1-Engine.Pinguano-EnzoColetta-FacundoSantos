@@ -3,6 +3,7 @@
 #include "dll-Exp-Inp.h"
 #include "Shape.h"
 #include "Window.h"
+#include "InputSystem.h"
 #include "Shader.h"
 #include "Renderer.h"
 #include "ErrorLog.h"
@@ -28,6 +29,7 @@ namespace baseEngine
 
 	public:
 
+		InputSystem* inputSystem;
 		BaseGame(int width, int height, const char* windowName);
 		~BaseGame();
 		void gameLoop();

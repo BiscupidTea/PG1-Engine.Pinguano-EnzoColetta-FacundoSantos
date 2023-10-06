@@ -23,6 +23,7 @@
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\Entity2D.cpp" />
     <ClCompile Include="src\ErrorLog.cpp" />
+    <ClCompile Include="src\InputSystem.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Shape.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="src\Entity2D.h" />
     <ClInclude Include="src\ErrorLog.h" />
     <ClInclude Include="src\glm_math.h" />
+    <ClInclude Include="src\InputSystem.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Shape.h" />

@@ -19,13 +19,23 @@ void Game::init()
 	Vector3 position = Vector3{ width/2,height/2,0 };
 	Vector3 scale = Vector3{ 200,200,1 };
 	Vector3 rotation = Vector3{ 0,0,0 };
-	triangle = new Shape(Shape::typeShapes::Square, colorTriangle, GetRenderer(), position, scale, rotation);
+	triangle = new Shape(Shape::typeShapes::Triangle, colorTriangle, GetRenderer(), position, scale, rotation);
 	triangle->setRotationZ(90);
 }
 
 void Game::update()
 {
 	triangle->Draw();
+
+	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
+	{
+		triangle->setRotationZ(1);
+	}
+
+	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
+	{
+		triangle->setRotationZ(-1);
+	}
 }
 
 void Game::exit()
