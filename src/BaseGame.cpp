@@ -17,25 +17,4 @@ namespace baseEngine
 
 		inputSystem = new InputSystem(window->getWindow());
 	}
-
-	BaseGame::~BaseGame()
-	{
-		delete window;
-		delete renderer;
-	}
-
-	void BaseGame::gameLoop()
-	{
-		while (!glfwWindowShouldClose(window->getWindow()))
-		{
-			renderer->StartDraw();
-			update();
-			renderer->EndDraw();
-		}
-	}
-
-	Renderer* BaseGame::GetRenderer()
-	{
-		return renderer;
-	}
 }
