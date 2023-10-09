@@ -9,10 +9,16 @@ using namespace textureImporter;
 class Texture : public Entity2D
 {
 private:
-	unsigned char* value;
+	
+	unsigned int m_RendererID;
+	unsigned char* localBuffer;
+
 
 public:
-	Texture(string path, int width, int height, TextureImporter* textureImporter, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
+	Texture(string path, int width, int height, unsigned int m_RendererID, TextureImporter* textureImporter, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 	~Texture();
+	
+	void Bind(unsigned int slot);
+	void Unbind();
 };
 
