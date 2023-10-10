@@ -48,6 +48,12 @@
     <ClCompile Include="src\InputSystem.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="src\TextureImporter.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -86,9 +92,15 @@
     <ClInclude Include="src\InputSystem.h">
       <Filter>Src</Filter>
     </ClInclude>
+    <ClInclude Include="src\TextureImporter.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Texture.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\Shader\Basic.Shader">
+    <None Include="Prueba\res\Shader\Basic.Shader">
       <Filter>Res\Shader</Filter>
     </None>
   </ItemGroup>
