@@ -1,6 +1,6 @@
 #include "Texture.h"
 
-Texture::Texture(string path, int width, int height, unsigned int m_RendererID, TextureImporter* textureImporter, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
+Texture::Texture(const char path, int width, int height, unsigned int m_RendererID, TextureImporter* textureImporter, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
 {
 	stbi_set_flip_vertically_on_load(1);
 

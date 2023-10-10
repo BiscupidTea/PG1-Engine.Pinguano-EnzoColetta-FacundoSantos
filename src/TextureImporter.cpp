@@ -2,9 +2,11 @@
 
 namespace textureImporter
 {
-    unsigned char TextureImporter::GetTexture(string& path, int m_Width, int m_Height, int m_BPP)
+    unsigned char TextureImporter::GetTexture(const char& path, int m_Width, int m_Height, int m_BPP)
     {
-        m_LocalBuffer = stbi_load(path.c_str(), &m_Width, &m_Height, &m_BPP, 4);
+        const char* defalutPath = "PG1-Engine.Pinguano-EnzoColetta-FacundoSantos/res";
+
+        m_LocalBuffer = stbi_load(defalutPath + path, &m_Width, &m_Height, &m_BPP, 4);
 
         return *m_LocalBuffer;
     }

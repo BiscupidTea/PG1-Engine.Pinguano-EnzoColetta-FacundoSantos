@@ -15,7 +15,7 @@ private:
 
 
 public:
-	Texture(string path, int width, int height, unsigned int m_RendererID, TextureImporter* textureImporter, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
+	Texture(const char path, int width, int height, unsigned int m_RendererID, TextureImporter* textureImporter, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 	~Texture();
 	
 	void Bind(unsigned int slot);
