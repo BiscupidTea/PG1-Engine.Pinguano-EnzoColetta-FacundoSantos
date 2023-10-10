@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="libs\stb\Include\stb_image.cpp" />
     <ClCompile Include="src\BaseGame.cpp" />
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\Entity2D.cpp" />
@@ -32,6 +33,7 @@
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="libs\stb\Include\stb_image.h" />
     <ClInclude Include="src\BaseGame.h" />
     <ClInclude Include="src\dll-Exp-Inp.h" />
     <ClInclude Include="src\Entity.h" />

@@ -1,7 +1,6 @@
-#define STB_IMAGE_IMPLEMENTATION
+#pragma once
 #include "stb_image.h"
 #include <string>
-#pragma once
 
 using namespace std;
 
