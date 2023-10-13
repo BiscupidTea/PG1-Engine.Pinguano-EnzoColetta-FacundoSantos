@@ -1,35 +1,37 @@
 #include "Texture.h"
 
-Texture::Texture(const char path, int width, int height, unsigned int m_RendererID, TextureImporter* textureImporter, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
+namespace texture
 {
-	stbi_set_flip_vertically_on_load(1);
+	Texture::Texture(const char path, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
+	{
+		glGenTextures(1, &textureID);
+		glBindTexture(GL_TEXTURE_2D, textureID);
 
-	*localBuffer = textureImporter->GetTexture(path, width, height, 0);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 
-	glGenTextures(1, &m_RendererID);
-	glBindTexture(GL_TEXTURE_2D, m_RendererID);
+		stbi_set_flip_vertically_on_load(1);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+		*localBuffer = textureImporter->GetTexture(path, width, height, 0);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, localBuffer);
-	glBindTexture(GL_TEXTURE_2D, 0);
-}
+		if (localBuffer)
+		{
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, localBuffer);
+			glBindTexture(GL_TEXTURE_2D, 0);
+		}
+		
+		else
+		{
+			cout << "Failed to load texture" << endl;
+		}
 
-Texture::~Texture()
-{
+		stbi_image_free(localBuffer);
+	}
 
-}
+	Texture::~Texture()
+	{
 
-void Texture::Bind(unsigned int slot)
-{
-	glActiveTexture(GL_TEXTURE0 + slot);
-	glBindTexture(GL_TEXTURE_2D, m_RendererID);
-}
-
-void Texture::Unbind()
-{
-	glBindTexture(GL_TEXTURE_2D, 0);
+	}
 }
