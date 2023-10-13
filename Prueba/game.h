@@ -1,6 +1,6 @@
 #pragma once
-#include "Shape.h"
-#include "BaseGame.h"
+#include "Entity/Shape.h"
+#include "CoreEngine/BaseGame.h"
 
 using namespace baseEngine;
 

@@ -1,7 +1,6 @@
 #pragma once
-#include "Window.h"
-#include "dll-Exp-Inp.h"
-
+#include "CoreEngine/Window.h"
+#include "Tools/dll-Exp-Inp.h"
 
 class EXPORT InputSystem
 {

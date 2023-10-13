@@ -1,12 +1,11 @@
 #pragma once
-
-#include "dll-Exp-Inp.h"
-#include "Shape.h"
-#include "Window.h"
+#include "Tools/dll-Exp-Inp.h"
+#include "Entity/Shape.h"
+#include "CoreEngine/Window.h"
 #include "InputSystem.h"
 #include "Shader.h"
-#include "Renderer.h"
-#include "ErrorLog.h"
+#include "CoreEngine/Renderer.h"
+#include "Tools/ErrorLog.h"
 
 using namespace shape;
 using namespace window;

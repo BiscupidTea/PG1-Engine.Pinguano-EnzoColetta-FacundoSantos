@@ -1,7 +1,7 @@
 #include "Shader.h"
-#include "Window.h"
-#include "Vectors.h"
-#include "ErrorLog.h"
+#include "CoreEngine/Window.h"
+#include "Tools/Vectors.h"
+#include "Tools/ErrorLog.h"
 #include <GLFW/glfw3.h>
 #include "..\libs\glm\include\glm.hpp"
 #include "..\libs\glm\include\gtc\matrix_transform.hpp"
