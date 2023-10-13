@@ -51,10 +51,10 @@
     <ClCompile Include="src\Entity\Texture.cpp">
       <Filter>Src\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="src\ErrorLog.cpp">
+    <ClCompile Include="src\Tools\ErrorLog.cpp">
       <Filter>Src\tools</Filter>
     </ClCompile>
-    <ClCompile Include="src\TextureImporter.cpp">
+    <ClCompile Include="src\Tools\TextureImporter.cpp">
       <Filter>Src\tools</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,19 +89,19 @@
     <ClInclude Include="src\Entity\Texture.h">
       <Filter>Src\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\dll-Exp-Inp.h">
+    <ClInclude Include="src\Tools\dll-Exp-Inp.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
-    <ClInclude Include="src\ErrorLog.h">
+    <ClInclude Include="src\Tools\ErrorLog.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
-    <ClInclude Include="src\glm_math.h">
+    <ClInclude Include="src\Tools\glm_math.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
-    <ClInclude Include="src\TextureImporter.h">
+    <ClInclude Include="src\Tools\TextureImporter.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vectors.h">
+    <ClInclude Include="src\Tools\Vectors.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
   </ItemGroup>

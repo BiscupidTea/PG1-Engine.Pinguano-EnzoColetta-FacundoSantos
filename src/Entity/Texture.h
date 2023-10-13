@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreEngine/Renderer.h"
 #include "Entity/Entity2D.h"
-#include "TextureImporter.h"
+#include "Tools/TextureImporter.h"
 
 using namespace Entity2D;
 using namespace textureImporter;

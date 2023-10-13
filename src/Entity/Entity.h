@@ -1,6 +1,6 @@
 #pragma once
-#include "dll-Exp-Inp.h"
-#include "Vectors.h"
+#include "Tools/dll-Exp-Inp.h"
+#include "Tools/Vectors.h"
 #include "CoreEngine/Renderer.h"
 
 using namespace vectors;
