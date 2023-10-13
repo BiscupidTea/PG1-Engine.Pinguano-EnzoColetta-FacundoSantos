@@ -17,6 +17,7 @@ namespace Entity2D
 		int vertexSize = 0;
 		int atributeVertexSize = 3;
 		float* vertexPositions = 0;
+		float* vertexTexture = 0;
 
 		unsigned int EBO = 0; //Element Buffer Object.
 		int indexSize = 0;
