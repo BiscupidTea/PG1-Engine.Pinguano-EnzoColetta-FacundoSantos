@@ -2,7 +2,7 @@
 
 namespace texture
 {
-	Texture::Texture(const char path, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
+	Texture::Texture(const char textureName, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
 	{
 		glGenTextures(1, &textureID);
 		glBindTexture(GL_TEXTURE_2D, textureID);
@@ -14,7 +14,7 @@ namespace texture
 
 		stbi_set_flip_vertically_on_load(1);
 
-		*localBuffer = textureImporter->GetTexture(path, width, height, 0);
+		*localBuffer = textureImporter->GetTexture(textureName, width, height, 0);
 
 		if (localBuffer)
 		{

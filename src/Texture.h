@@ -18,7 +18,7 @@ namespace texture
 
 
 	public:
-		Texture(const char path, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
+		Texture(const char textureName, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 		~Texture();
 	};
 }
