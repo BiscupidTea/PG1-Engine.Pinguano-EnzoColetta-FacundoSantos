@@ -23,13 +23,13 @@
     <ClCompile Include="src\CoreEngine\BaseGame.cpp" />
     <ClCompile Include="src\CoreEngine\Renderer.cpp" />
     <ClCompile Include="src\CoreEngine\Window.cpp" />
-    <ClCompile Include="src\Entity.cpp" />
-    <ClCompile Include="src\Entity2D.cpp" />
+    <ClCompile Include="src\Entity\Entity.cpp" />
+    <ClCompile Include="src\Entity\Entity2D.cpp" />
+    <ClCompile Include="src\Entity\Shape.cpp" />
+    <ClCompile Include="src\Entity\Texture.cpp" />
     <ClCompile Include="src\ErrorLog.cpp" />
     <ClCompile Include="src\InputSystem.cpp" />
     <ClCompile Include="src\Shader.cpp" />
-    <ClCompile Include="src\Shape.cpp" />
-    <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\TextureImporter.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -38,14 +38,14 @@
     <ClInclude Include="src\CoreEngine\Renderer.h" />
     <ClInclude Include="src\CoreEngine\Window.h" />
     <ClInclude Include="src\dll-Exp-Inp.h" />
-    <ClInclude Include="src\Entity.h" />
-    <ClInclude Include="src\Entity2D.h" />
+    <ClInclude Include="src\Entity\Entity.h" />
+    <ClInclude Include="src\Entity\Entity2D.h" />
+    <ClInclude Include="src\Entity\Shape.h" />
+    <ClInclude Include="src\Entity\Texture.h" />
     <ClInclude Include="src\ErrorLog.h" />
     <ClInclude Include="src\glm_math.h" />
     <ClInclude Include="src\InputSystem.h" />
     <ClInclude Include="src\Shader.h" />
-    <ClInclude Include="src\Shape.h" />
-    <ClInclude Include="src\Texture.h" />
     <ClInclude Include="src\TextureImporter.h" />
     <ClInclude Include="src\Vectors.h" />
   </ItemGroup>

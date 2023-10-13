@@ -24,26 +24,8 @@
     <ClCompile Include="src\Shader.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entity.cpp">
-      <Filter>Src\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Entity2D.cpp">
-      <Filter>Src\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shape.cpp">
-      <Filter>Src\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ErrorLog.cpp">
-      <Filter>Src\tools</Filter>
-    </ClCompile>
     <ClCompile Include="src\InputSystem.cpp">
       <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\TextureImporter.cpp">
-      <Filter>Src\tools</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Texture.cpp">
-      <Filter>Src\Entity</Filter>
     </ClCompile>
     <ClCompile Include="libs\stb\Include\stb_image.cpp">
       <Filter>Src\tools</Filter>
@@ -57,40 +39,31 @@
     <ClCompile Include="src\CoreEngine\Window.cpp">
       <Filter>Src\CoreEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Entity\Entity.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Entity2D.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Shape.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Texture.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ErrorLog.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextureImporter.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Entity.h">
-      <Filter>Src\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Entity2D.h">
-      <Filter>Src\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shape.h">
-      <Filter>Src\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vectors.h">
-      <Filter>Src\tools</Filter>
-    </ClInclude>
-    <ClInclude Include="src\glm_math.h">
-      <Filter>Src\tools</Filter>
-    </ClInclude>
-    <ClInclude Include="src\dll-Exp-Inp.h">
-      <Filter>Src\tools</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ErrorLog.h">
-      <Filter>Src\tools</Filter>
-    </ClInclude>
     <ClInclude Include="src\InputSystem.h">
       <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TextureImporter.h">
-      <Filter>Src\tools</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Texture.h">
-      <Filter>Src\Entity</Filter>
     </ClInclude>
     <ClInclude Include="libs\stb\Include\stb_image.h">
       <Filter>Src\tools</Filter>
@@ -103,6 +76,33 @@
     </ClInclude>
     <ClInclude Include="src\CoreEngine\Window.h">
       <Filter>Src\CoreEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Entity.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Entity2D.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Shape.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Texture.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dll-Exp-Inp.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ErrorLog.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\glm_math.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TextureImporter.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vectors.h">
+      <Filter>Src\tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

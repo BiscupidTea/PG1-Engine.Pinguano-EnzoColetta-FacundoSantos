@@ -1,5 +1,5 @@
 #pragma once
-#include "Shape.h"
+#include "Entity/Shape.h"
 #include "CoreEngine/BaseGame.h"
 
 using namespace baseEngine;

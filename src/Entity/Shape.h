@@ -1,7 +1,7 @@
 #pragma once
 #include "dll-Exp-Inp.h"
 #include <GL/glew.h>
-#include "Entity2D.h"
+#include "Entity/Entity2D.h"
 
 using namespace Entity2D;
 

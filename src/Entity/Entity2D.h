@@ -1,6 +1,6 @@
 #pragma once
 #include "Vectors.h"
-#include "Entity.h"
+#include "Entity/Entity.h"
 
 using namespace vectors;
 using namespace Entity;
