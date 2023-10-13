@@ -60,4 +60,9 @@ namespace shape
 		atributeVertexSize = 3;
 		render->CreateVBuffer(vertexPositions, indexs, vertexSize, indexSize, atributeVertexSize, VAO, VBO, EBO);
 	}
+
+	void Shape::Draw()
+	{
+		DrawShape();
+	}
 }

@@ -15,11 +15,12 @@ namespace renderer
 		vec3 cameraPosition = vec3(0, 0, 1);
 		view = lookAt(cameraPosition, { 0,0,0 }, { 0,1,0 });
 
-		ShaderProgramSource source = shader.ParseShader("res/Shader/Basic.Shader");
-		shaderProgram = shader.createShader(source.VertexSource, source.FragmentSource);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glUseProgram(shaderProgram);
+		ShaderProgramSource source;
+		source = shader.ParseShader("res/Shader/Primitive.Shader");
+		primitiveShader = shader.createShader(source.VertexSource, source.FragmentSource);
+
+		source = shader.ParseShader("res/Shader/Texture.Shader");
+		textureShader = shader.createShader(source.VertexSource, source.FragmentSource);
 	}
 
 	Renderer::~Renderer()
@@ -41,16 +42,33 @@ namespace renderer
 
 	void Renderer::Draw2DEntity(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model)
 	{
-		glUseProgram(shaderProgram);
+		glUseProgram(primitiveShader);
 
-		unsigned int transformLoc = glGetUniformLocation(shaderProgram, "u_MVP");
+		unsigned int transformLoc = glGetUniformLocation(primitiveShader, "u_MVP");
 		mat4 MVP = projection * view * model;
 		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(MVP));
 
 		glBindVertexArray(VAO);
-		glUniform4f(glGetUniformLocation(shaderProgram, "u_Color"), color.x, color.y, color.z, color.w);
+		glUniform4f(glGetUniformLocation(primitiveShader, "u_Color"), color.x, color.y, color.z, color.w);
 		glDrawElements(GL_TRIANGLES, sizeIndex, GL_UNSIGNED_INT, nullptr);
 		glUseProgram(0);
+	}
+
+	void Renderer::DrawTexture(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model)
+	{
+		//glUseProgram(textureShader);
+
+		//unsigned int transformLoc = glGetUniformLocation(primitiveShader, "u_MVP");
+		//mat4 MVP = projection * view * model;
+		//glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(MVP));
+
+		//glActiveTexture(GL_TEXTURE0);
+		//glBindTexture(GL_TEXTURE_2D, texture1);
+
+		//ourShader.use();
+		//glBindVertexArray(VAO);
+		//glDrawElements(GL_TRIANGLES, sizeIndex, GL_UNSIGNED_INT, 0);
+
 	}
 
 	void Renderer::CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO)

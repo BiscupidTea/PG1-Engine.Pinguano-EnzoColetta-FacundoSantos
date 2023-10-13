@@ -23,5 +23,6 @@ namespace shape
 		~Shape();
 		void createTriangle();
 		void createRectangle();
+		void Draw();
 	};
 }

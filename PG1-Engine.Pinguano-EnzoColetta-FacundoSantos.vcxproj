@@ -50,7 +50,8 @@
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Prueba\res\Shader\Basic.Shader" />
+    <None Include="Prueba\res\Shader\Primitive.Shader" />
+    <None Include="Prueba\res\Shader\Texture.Shader" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

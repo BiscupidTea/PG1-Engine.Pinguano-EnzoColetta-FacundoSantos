@@ -22,8 +22,13 @@ namespace Entity2D
 		return color;
 	}
 
-	void Entity2D::Draw()
+	void Entity2D::DrawShape()
 	{
 		render->Draw2DEntity(VAO, indexSize, color, model);
+	}
+
+	void Entity2D::DrawTexture()
+	{
+		render->DrawTexture(VAO, indexSize, color, model);
 	}
 }

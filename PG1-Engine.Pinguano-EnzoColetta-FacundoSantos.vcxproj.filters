@@ -106,7 +106,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Prueba\res\Shader\Basic.Shader">
+    <None Include="Prueba\res\Shader\Primitive.Shader">
+      <Filter>Res\Shader</Filter>
+    </None>
+    <None Include="Prueba\res\Shader\Texture.Shader">
       <Filter>Res\Shader</Filter>
     </None>
   </ItemGroup>

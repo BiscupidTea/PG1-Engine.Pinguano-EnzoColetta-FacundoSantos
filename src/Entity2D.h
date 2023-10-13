@@ -27,7 +27,8 @@ namespace Entity2D
 		Entity2D(Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 		~Entity2D();
 		
-		void Draw();
+		void DrawShape();
+		void DrawTexture();
 
 		void setColor(Vector4 rgba);
 		Vector4 getColor();

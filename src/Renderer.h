@@ -27,7 +27,8 @@ namespace renderer
 		ErrorLog errorLog;
 		Window* window;
 		Shader shader;
-		unsigned int shaderProgram;
+		unsigned int primitiveShader;
+		unsigned int textureShader;
 		glm::mat4x4 projection;
 		glm::mat4x4 view;
 
@@ -48,6 +49,8 @@ namespace renderer
 		/// Processes all pending events.
 		/// </summary>
 		void Draw2DEntity(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model);
+
+		void DrawTexture(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model);
 
 		void CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize,
 			unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);
