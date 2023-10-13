@@ -1,6 +1,6 @@
 #pragma once
 #include "Shape.h"
-#include "BaseGame.h"
+#include "CoreEngine/BaseGame.h"
 
 using namespace baseEngine;
 

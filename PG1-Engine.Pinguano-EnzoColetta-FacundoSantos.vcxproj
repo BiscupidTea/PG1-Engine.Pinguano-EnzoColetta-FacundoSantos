@@ -20,34 +20,34 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\stb\Include\stb_image.cpp" />
-    <ClCompile Include="src\BaseGame.cpp" />
+    <ClCompile Include="src\CoreEngine\BaseGame.cpp" />
+    <ClCompile Include="src\CoreEngine\Renderer.cpp" />
+    <ClCompile Include="src\CoreEngine\Window.cpp" />
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\Entity2D.cpp" />
     <ClCompile Include="src\ErrorLog.cpp" />
     <ClCompile Include="src\InputSystem.cpp" />
-    <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Shape.cpp" />
     <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\TextureImporter.cpp" />
-    <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\stb\Include\stb_image.h" />
-    <ClInclude Include="src\BaseGame.h" />
+    <ClInclude Include="src\CoreEngine\BaseGame.h" />
+    <ClInclude Include="src\CoreEngine\Renderer.h" />
+    <ClInclude Include="src\CoreEngine\Window.h" />
     <ClInclude Include="src\dll-Exp-Inp.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\Entity2D.h" />
     <ClInclude Include="src\ErrorLog.h" />
     <ClInclude Include="src\glm_math.h" />
     <ClInclude Include="src\InputSystem.h" />
-    <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Shape.h" />
     <ClInclude Include="src\Texture.h" />
     <ClInclude Include="src\TextureImporter.h" />
     <ClInclude Include="src\Vectors.h" />
-    <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Prueba\res\Shader\Primitive.Shader" />

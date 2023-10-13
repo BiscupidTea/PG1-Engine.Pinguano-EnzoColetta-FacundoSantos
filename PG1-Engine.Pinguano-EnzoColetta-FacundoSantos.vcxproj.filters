@@ -24,15 +24,6 @@
     <ClCompile Include="src\Shader.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseGame.cpp">
-      <Filter>Src\CoreEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Renderer.cpp">
-      <Filter>Src\CoreEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Window.cpp">
-      <Filter>Src\CoreEngine</Filter>
-    </ClCompile>
     <ClCompile Include="src\Entity.cpp">
       <Filter>Src\Entity</Filter>
     </ClCompile>
@@ -57,19 +48,19 @@
     <ClCompile Include="libs\stb\Include\stb_image.cpp">
       <Filter>Src\tools</Filter>
     </ClCompile>
+    <ClCompile Include="src\CoreEngine\BaseGame.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CoreEngine\Renderer.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CoreEngine\Window.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
       <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BaseGame.h">
-      <Filter>Src\CoreEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Renderer.h">
-      <Filter>Src\CoreEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Window.h">
-      <Filter>Src\CoreEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\Entity.h">
       <Filter>Src\Entity</Filter>
@@ -103,6 +94,15 @@
     </ClInclude>
     <ClInclude Include="libs\stb\Include\stb_image.h">
       <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CoreEngine\BaseGame.h">
+      <Filter>Src\CoreEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CoreEngine\Renderer.h">
+      <Filter>Src\CoreEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CoreEngine\Window.h">
+      <Filter>Src\CoreEngine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

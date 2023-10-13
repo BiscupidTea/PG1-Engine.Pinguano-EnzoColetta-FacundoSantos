@@ -1,7 +1,7 @@
 #pragma once
 #include "dll-Exp-Inp.h"
 #include "Vectors.h"
-#include "Renderer.h"
+#include "CoreEngine/Renderer.h"
 
 using namespace vectors;
 using namespace renderer;
