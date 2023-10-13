@@ -56,7 +56,7 @@ namespace renderer
 
 	void Renderer::DrawTexture(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model)
 	{
-		//glUseProgram(textureShader);
+		glUseProgram(textureShader);
 
 		//unsigned int transformLoc = glGetUniformLocation(primitiveShader, "u_MVP");
 		//mat4 MVP = projection * view * model;
@@ -66,9 +66,9 @@ namespace renderer
 		//glBindTexture(GL_TEXTURE_2D, texture1);
 
 		//ourShader.use();
-		//glBindVertexArray(VAO);
-		//glDrawElements(GL_TRIANGLES, sizeIndex, GL_UNSIGNED_INT, 0);
-
+		glBindVertexArray(VAO);
+		glDrawElements(GL_TRIANGLES, sizeIndex, GL_UNSIGNED_INT, 0);
+		glUseProgram(0);
 	}
 
 	void Renderer::CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO)

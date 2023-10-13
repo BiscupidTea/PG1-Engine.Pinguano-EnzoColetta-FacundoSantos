@@ -8,7 +8,7 @@ using namespace textureImporter;
 
 namespace texture
 {
-	class Texture : public Entity2D
+	class EXPORT Texture : public Entity2D
 	{
 	private:
 
@@ -22,5 +22,6 @@ namespace texture
 		~Texture();
 
 		void CreateTexture();
+		void Draw();
 	};
 }
