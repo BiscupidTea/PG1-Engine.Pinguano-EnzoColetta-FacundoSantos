@@ -6,6 +6,7 @@
 #include "..\libs\glm\include\glm.hpp"
 #include "..\libs\glm\include\gtc\matrix_transform.hpp"
 #include "..\libs\glm\include\gtc\type_ptr.hpp"
+#include "Tools/TextureImporter.h"
 
 #pragma once
 
@@ -14,6 +15,7 @@ using namespace shader;
 using namespace errorLog;
 using namespace vectors;
 using namespace glm;
+using namespace textureImporter;
 
 namespace renderer
 {
@@ -55,6 +57,9 @@ namespace renderer
 		void CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize,
 			unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);
 
+		void CreateVBuffer(float* positions, int* indexs, int positionsSize, int indexSize, int atributeVertexSize,
+			unsigned int& VAO, unsigned int& VBO, unsigned int& EBO, int aColorSize, int aUVSize);
+		void BindTexture(const char* textureName, unsigned& textureID);
 		void deleteVertexAndBuffer(unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);
 	};
 }

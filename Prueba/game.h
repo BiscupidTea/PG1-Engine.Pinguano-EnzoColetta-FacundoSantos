@@ -1,5 +1,4 @@
 #pragma once
-#include "Entity/Shape.h"
 #include "CoreEngine/BaseGame.h"
 
 using namespace baseEngine;
@@ -7,10 +6,12 @@ using namespace baseEngine;
 class Game : public BaseGame
 {
 private:
-	Shape* triangle;
 	const char* windowName;
 
-	Vector4 colorTriangle;
+	Shape* triangle;
+	Texture* testTexture;
+
+	Vector4 colorTest;
 	Vector3 position;
 	Vector3 scale;
 	Vector3 rotation;

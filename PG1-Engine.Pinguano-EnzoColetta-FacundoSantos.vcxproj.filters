@@ -27,9 +27,6 @@
     <ClCompile Include="src\InputSystem.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="libs\stb\Include\stb_image.cpp">
-      <Filter>Src\tools</Filter>
-    </ClCompile>
     <ClCompile Include="src\CoreEngine\BaseGame.cpp">
       <Filter>Src\CoreEngine</Filter>
     </ClCompile>
@@ -57,6 +54,9 @@
     <ClCompile Include="src\Tools\TextureImporter.cpp">
       <Filter>Src\tools</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tools\stb_image.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -64,9 +64,6 @@
     </ClInclude>
     <ClInclude Include="src\InputSystem.h">
       <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\stb\Include\stb_image.h">
-      <Filter>Src\tools</Filter>
     </ClInclude>
     <ClInclude Include="src\CoreEngine\BaseGame.h">
       <Filter>Src\CoreEngine</Filter>
@@ -102,6 +99,9 @@
       <Filter>Src\tools</Filter>
     </ClInclude>
     <ClInclude Include="src\Tools\Vectors.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\stb_image.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
   </ItemGroup>

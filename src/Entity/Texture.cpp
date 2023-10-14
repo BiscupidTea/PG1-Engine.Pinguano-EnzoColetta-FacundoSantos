@@ -2,32 +2,15 @@
 
 namespace texture
 {
-	Texture::Texture(const char textureName, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
+	Texture::Texture(const char* textureName, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
 	{
-		glGenTextures(1, &textureID);
-		glBindTexture(GL_TEXTURE_2D, textureID);
+		this->width = width;
+		this->height = height;
 
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+		CreateTexture();
 
-		stbi_set_flip_vertically_on_load(1);
-
-		*localBuffer = textureImporter->GetTexture(textureName, width, height, 0);
-
-		if (localBuffer)
-		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, localBuffer);
-			glBindTexture(GL_TEXTURE_2D, 0);
-		}
-		
-		else
-		{
-			cout << "Failed to load texture" << endl;
-		}
-
-		stbi_image_free(localBuffer);
+		render->CreateVBuffer(vertexPositions, indexs, vertexSize, indexSize, atributeVertexSize, VAO, VBO, EBO, aColorSize, aUvSize);
+		render->BindTexture(textureName, textureId);
 	}
 
 	Texture::~Texture()
@@ -37,14 +20,22 @@ namespace texture
 
 	void Texture::CreateTexture()
 	{
-		vertexSize = 32;
+		vertexSize = 36;
 
-		vertexTexture = new float [vertexSize] {
-			// positions          // colors           // texture coords
-			 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
-			 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
-			-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
-			-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
+		vertexPositions = new float [vertexSize]
+		{
+			// positions			 // colors					// texture coords
+			0.5f, 0.5f, 0.0f,		1.0f, 1.0f, 1.0f,1.0f,		1.0f, 1.0f,   // top right
+			0.5f, -0.5f, 0.0f,		1.0f, 1.0f, 1.0f, 1.0f,		1.0f, 0.0f,   // bottom right
+			-0.5f, -0.5f, 0.0f,		1.0f, 1.0f, 1.0f, 1.0f,		0.0f, 0.0f,   // bottom left
+			-0.5f, 0.5f, 0.0f,		1.0f, 1.0f, 1.0f, 1.0f,		0.0f, 1.0f    // top left 
+		};
+
+		indexSize = 6;
+		indexs = new int[indexSize]
+		{
+			0, 1, 3,
+				1, 2, 3
 		};
 	}
 

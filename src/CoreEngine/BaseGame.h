@@ -1,17 +1,17 @@
 #pragma once
-#include "Tools/dll-Exp-Inp.h"
-#include "Entity/Shape.h"
 #include "CoreEngine/Window.h"
-#include "InputSystem.h"
-#include "Shader.h"
 #include "CoreEngine/Renderer.h"
-#include "Tools/ErrorLog.h"
+
+#include "Entity/Shape.h"
+#include "Entity/Texture.h"
+
+#include "Tools/dll-Exp-Inp.h"
+#include "InputSystem.h"
 
 using namespace shape;
 using namespace window;
 using namespace renderer;
-using namespace shader;
-using namespace errorLog;
+using namespace texture;
 
 namespace baseEngine
 {

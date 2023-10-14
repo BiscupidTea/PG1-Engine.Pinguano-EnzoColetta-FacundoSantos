@@ -14,14 +14,19 @@ namespace Entity2D
 		unsigned int VAO = 0; //Vertex Array Object.
 
 		unsigned int VBO = 0; //Vertex Buffer Object.
-		int vertexSize = 0;
+		int vertexSize;
 		int atributeVertexSize = 3;
+		int aColorSize = 4;
 		float* vertexPositions = 0;
-		float* vertexTexture = 0;
 
 		unsigned int EBO = 0; //Element Buffer Object.
 		int indexSize = 0;
 		int* indexs = 0;
+
+		unsigned int textureId; //texture
+		int uvSize;
+		int aUvSize = 2;
+		float* uvPos;
 
 	public:
 		Entity2D(Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);

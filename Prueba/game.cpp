@@ -15,27 +15,42 @@ Game::~Game()
 
 void Game::init()
 {
-	Vector4 colorTriangle = Vector4{ 1.0f, 0.4f, 0.4f, 1 };
-	Vector3 position = Vector3{ width/2,height/2,0 };
-	Vector3 scale = Vector3{ 200,200,1 };
-	Vector3 rotation = Vector3{ 0,0,0 };
-	triangle = new Shape(Shape::typeShapes::Triangle, colorTriangle, GetRenderer(), position, scale, rotation);
-	triangle->setRotationZ(90);
+	colorTest = Vector4{ 1.0f, 1.0f, 1.0f, 1 };
+	position = Vector3{ width/2,height/2,0 };
+	scale = Vector3{ 200,200,1 };
+	rotation = Vector3{ 0,0,0 };
+
+	const char* path = "res/pingu.png";
+	testTexture = new Texture(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
+
+	triangle = new Shape(Shape::typeShapes::Square, colorTest, GetRenderer(), position, scale, rotation);
 }
 
 void Game::update()
 {
-	triangle->Draw();
 
 	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
 	{
-		triangle->setRotationZ(1);
+		testTexture->setRotationZ(1);
 	}
 
 	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
 	{
+		testTexture->setRotationZ(-1);
+	}
+
+	if (inputSystem->getKey(inputSystem->g, inputSystem->Pressed))
+	{
+		triangle->setRotationZ(1);
+	}
+
+	if (inputSystem->getKey(inputSystem->j, inputSystem->Pressed))
+	{
 		triangle->setRotationZ(-1);
 	}
+
+	testTexture->Draw();
+	//triangle->Draw();
 }
 
 void Game::exit()

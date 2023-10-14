@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="libs\stb\Include\stb_image.cpp" />
     <ClCompile Include="src\CoreEngine\BaseGame.cpp" />
     <ClCompile Include="src\CoreEngine\Renderer.cpp" />
     <ClCompile Include="src\CoreEngine\Window.cpp" />
@@ -30,10 +29,10 @@
     <ClCompile Include="src\InputSystem.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Tools\ErrorLog.cpp" />
+    <ClCompile Include="src\Tools\stb_image.cpp" />
     <ClCompile Include="src\Tools\TextureImporter.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libs\stb\Include\stb_image.h" />
     <ClInclude Include="src\CoreEngine\BaseGame.h" />
     <ClInclude Include="src\CoreEngine\Renderer.h" />
     <ClInclude Include="src\CoreEngine\Window.h" />
@@ -46,6 +45,7 @@
     <ClInclude Include="src\Tools\dll-Exp-Inp.h" />
     <ClInclude Include="src\Tools\ErrorLog.h" />
     <ClInclude Include="src\Tools\glm_math.h" />
+    <ClInclude Include="src\Tools\stb_image.h" />
     <ClInclude Include="src\Tools\TextureImporter.h" />
     <ClInclude Include="src\Tools\Vectors.h" />
   </ItemGroup>
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;MAKEDLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\stb\Include;$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\glm\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src;$(SolutionDir)resources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\glm\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,7 +144,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;MAKEDLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\stb\Include;$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src;$(SolutionDir)resources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\glew\glew-2.1.0-win32\glew-2.1.0\include;$(SolutionDir)libs\glm\include;$(SolutionDir)libs\gflw\glfw-3.3.8.bin.WIN32\include;$(SolutionDir)src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
