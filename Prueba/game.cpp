@@ -22,35 +22,42 @@ void Game::init()
 
 	const char* path = "res/pingu.png";
 	testTexture = new Texture(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
-
-	triangle = new Shape(Shape::typeShapes::Square, colorTest, GetRenderer(), position, scale, rotation);
 }
 
 void Game::update()
 {
 
-	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
+	if (inputSystem->getKey(inputSystem->q, inputSystem->Pressed))
 	{
 		testTexture->setRotationZ(1);
 	}
 
-	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
+	if (inputSystem->getKey(inputSystem->e, inputSystem->Pressed))
 	{
 		testTexture->setRotationZ(-1);
 	}
 
-	if (inputSystem->getKey(inputSystem->g, inputSystem->Pressed))
+	if (inputSystem->getKey(inputSystem->s, inputSystem->Pressed))
 	{
-		triangle->setRotationZ(1);
+		testTexture->setPosition(Vector3{ triangle->getPosition().x, triangle->getPosition().y - 1.0f,0 });
 	}
 
-	if (inputSystem->getKey(inputSystem->j, inputSystem->Pressed))
+	if (inputSystem->getKey(inputSystem->w, inputSystem->Pressed))
 	{
-		triangle->setRotationZ(-1);
+		testTexture->setPosition(Vector3{ triangle->getPosition().x, triangle->getPosition().y + 1.0f,0 });
+	}
+
+	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
+	{
+		testTexture->setPosition(Vector3{ triangle->getPosition().x - 1.0f, triangle->getPosition().y ,0 });
+	}
+
+	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
+	{
+		testTexture->setPosition(Vector3{ triangle->getPosition().x + 1.0f, triangle->getPosition().y ,0 });
 	}
 
 	testTexture->Draw();
-	//triangle->Draw();
 }
 
 void Game::exit()
