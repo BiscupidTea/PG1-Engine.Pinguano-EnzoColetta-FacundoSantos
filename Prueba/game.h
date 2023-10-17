@@ -7,8 +7,6 @@ class Game : public BaseGame
 {
 private:
 	const char* windowName;
-
-	Shape* triangle;
 	Texture* testTexture;
 
 	Vector4 colorTest;

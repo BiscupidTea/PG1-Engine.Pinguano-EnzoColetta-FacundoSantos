@@ -62,5 +62,5 @@ void Game::update()
 
 void Game::exit()
 {
-	delete triangle;
+	delete testTexture;
 }
