@@ -29,6 +29,7 @@ namespace renderer
 		ErrorLog errorLog;
 		Window* window;
 		Shader shader;
+		TextureImporter textureImporter;
 		unsigned int primitiveShader;
 		unsigned int textureShader;
 		glm::mat4x4 projection;

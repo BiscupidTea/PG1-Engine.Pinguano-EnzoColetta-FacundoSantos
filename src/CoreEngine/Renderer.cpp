@@ -131,7 +131,7 @@ namespace renderer
 		stbi_set_flip_vertically_on_load(1);
 
 		int width, height, m_BPP;
-		unsigned char* localBuffer = stbi_load(textureName, &width, &height, &m_BPP, 0);
+		unsigned char* localBuffer = textureImporter.GetTexture(textureName, width, height, m_BPP);
 
 		if (m_BPP == 4)
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, localBuffer);
