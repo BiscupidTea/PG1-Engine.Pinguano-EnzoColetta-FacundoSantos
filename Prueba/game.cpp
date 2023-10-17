@@ -39,22 +39,22 @@ void Game::update()
 
 	if (inputSystem->getKey(inputSystem->s, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ triangle->getPosition().x, triangle->getPosition().y - 1.0f,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y - 1.0f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->w, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ triangle->getPosition().x, triangle->getPosition().y + 1.0f,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y + 1.0f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ triangle->getPosition().x - 1.0f, triangle->getPosition().y ,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x - 1.0f, testTexture->getPosition().y ,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ triangle->getPosition().x + 1.0f, triangle->getPosition().y ,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x + 1.0f, testTexture->getPosition().y ,0 });
 	}
 
 	testTexture->Draw();
