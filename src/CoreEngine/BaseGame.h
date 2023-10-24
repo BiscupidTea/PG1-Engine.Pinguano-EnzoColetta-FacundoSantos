@@ -6,6 +6,7 @@
 #include "Entity/Sprite.h"
 
 #include "Tools/dll-Exp-Inp.h"
+#include "Tools/Time.h"
 #include "InputSystem.h"
 
 using namespace shape;
@@ -24,6 +25,7 @@ namespace baseEngine
 
 		Renderer* renderer;
 		Window* window;
+		Time* time;
 		ErrorLog errorLog;
 
 	public:

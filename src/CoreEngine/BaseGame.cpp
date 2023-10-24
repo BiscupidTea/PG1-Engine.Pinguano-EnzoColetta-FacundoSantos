@@ -16,6 +16,8 @@ namespace baseEngine
 		renderer = new Renderer(window);
 
 		inputSystem = new InputSystem(window->getWindow());
+
+		time = new Time();
 	}
 
 	BaseGame::~BaseGame()

@@ -22,6 +22,7 @@ void Game::init()
 
 	const char* path = "res/pingu.png";
 	testTexture = new Sprite(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
+	
 }
 
 void Game::update()

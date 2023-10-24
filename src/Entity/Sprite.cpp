@@ -25,10 +25,10 @@ namespace sprite
 		vertexPositions = new float [vertexSize]
 		{
 			// positions			 // colors					// texture coords
-			0.5f, 0.5f, 0.0f,		1.0f, 1.0f, 1.0f,1.0f,		1.0f, 1.0f,   // top right
-			0.5f, -0.5f, 0.0f,		1.0f, 1.0f, 1.0f, 1.0f,		1.0f, 0.0f,   // bottom right
-			-0.5f, -0.5f, 0.0f,		1.0f, 1.0f, 1.0f, 1.0f,		0.0f, 0.0f,   // bottom left
-			-0.5f, 0.5f, 0.0f,		1.0f, 1.0f, 1.0f, 1.0f,		0.0f, 1.0f    // top left 
+			0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,   // top right
+				0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,   // bottom right
+				-0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,   // bottom left
+				-0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f    // top left 
 		};
 
 		indexSize = 6;
@@ -39,8 +39,42 @@ namespace sprite
 		};
 	}
 
+	void Sprite::Update()
+	{
+		if (!animation)
+		{
+			return;
+		}
+		else
+		{
+			animation->UpdateAnimation();
+			SetUV(animation->GetCurrentFrame());
+		}
+	}
+
 	void Sprite::Draw()
 	{
 		DrawTexture();
 	}
+
+	void Sprite::SetAnimation(Animation* animation)
+	{
+		this->animation = animation;
+	}
+
+	void Sprite::SetUV(Frame frame)
+	{
+		vertexPositions[7] = frame.uvArray->u;
+		vertexPositions[8] = frame.uvArray->v;
+
+		vertexPositions[16] = frame.uvArray->u;
+		vertexPositions[17] = frame.uvArray->v;
+
+		vertexPositions[25] = frame.uvArray->u;
+		vertexPositions[26] = frame.uvArray->v;
+
+		vertexPositions[34] = frame.uvArray->u;
+		vertexPositions[35] = frame.uvArray->v;
+	}
+
 }

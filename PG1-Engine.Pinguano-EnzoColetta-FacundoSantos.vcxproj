@@ -22,6 +22,7 @@
     <ClCompile Include="src\CoreEngine\BaseGame.cpp" />
     <ClCompile Include="src\CoreEngine\Renderer.cpp" />
     <ClCompile Include="src\CoreEngine\Window.cpp" />
+    <ClCompile Include="src\Entity\Animation.cpp" />
     <ClCompile Include="src\Entity\Entity.cpp" />
     <ClCompile Include="src\Entity\Entity2D.cpp" />
     <ClCompile Include="src\Entity\Shape.cpp" />
@@ -29,13 +30,16 @@
     <ClCompile Include="src\InputSystem.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Tools\ErrorLog.cpp" />
+    <ClCompile Include="src\Tools\Frame.cpp" />
     <ClCompile Include="src\Tools\stb_image.cpp" />
     <ClCompile Include="src\Tools\TextureImporter.cpp" />
+    <ClCompile Include="src\Tools\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CoreEngine\BaseGame.h" />
     <ClInclude Include="src\CoreEngine\Renderer.h" />
     <ClInclude Include="src\CoreEngine\Window.h" />
+    <ClInclude Include="src\Entity\Animation.h" />
     <ClInclude Include="src\Entity\Entity.h" />
     <ClInclude Include="src\Entity\Entity2D.h" />
     <ClInclude Include="src\Entity\Shape.h" />
@@ -44,9 +48,11 @@
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Tools\dll-Exp-Inp.h" />
     <ClInclude Include="src\Tools\ErrorLog.h" />
+    <ClInclude Include="src\Tools\Frame.h" />
     <ClInclude Include="src\Tools\glm_math.h" />
     <ClInclude Include="src\Tools\stb_image.h" />
     <ClInclude Include="src\Tools\TextureImporter.h" />
+    <ClInclude Include="src\Tools\Time.h" />
     <ClInclude Include="src\Tools\Vectors.h" />
   </ItemGroup>
   <ItemGroup>
