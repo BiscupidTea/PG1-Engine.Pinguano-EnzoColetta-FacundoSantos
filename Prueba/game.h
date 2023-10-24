@@ -7,7 +7,7 @@ class Game : public BaseGame
 {
 private:
 	const char* windowName;
-	Texture* testTexture;
+	Sprite* testTexture;
 
 	Vector4 colorTest;
 	Vector3 position;

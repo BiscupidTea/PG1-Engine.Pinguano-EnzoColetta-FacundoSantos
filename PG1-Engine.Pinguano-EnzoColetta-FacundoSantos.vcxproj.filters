@@ -45,7 +45,7 @@
     <ClCompile Include="src\Entity\Shape.cpp">
       <Filter>Src\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entity\Texture.cpp">
+    <ClCompile Include="src\Entity\Sprite.cpp">
       <Filter>Src\Entity</Filter>
     </ClCompile>
     <ClCompile Include="src\Tools\ErrorLog.cpp">
@@ -83,7 +83,7 @@
     <ClInclude Include="src\Entity\Shape.h">
       <Filter>Src\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\Entity\Texture.h">
+    <ClInclude Include="src\Entity\Sprite.h">
       <Filter>Src\Entity</Filter>
     </ClInclude>
     <ClInclude Include="src\Tools\dll-Exp-Inp.h">

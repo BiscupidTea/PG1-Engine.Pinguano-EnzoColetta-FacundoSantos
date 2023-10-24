@@ -25,7 +25,7 @@
     <ClCompile Include="src\Entity\Entity.cpp" />
     <ClCompile Include="src\Entity\Entity2D.cpp" />
     <ClCompile Include="src\Entity\Shape.cpp" />
-    <ClCompile Include="src\Entity\Texture.cpp" />
+    <ClCompile Include="src\Entity\Sprite.cpp" />
     <ClCompile Include="src\InputSystem.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Tools\ErrorLog.cpp" />
@@ -39,7 +39,7 @@
     <ClInclude Include="src\Entity\Entity.h" />
     <ClInclude Include="src\Entity\Entity2D.h" />
     <ClInclude Include="src\Entity\Shape.h" />
-    <ClInclude Include="src\Entity\Texture.h" />
+    <ClInclude Include="src\Entity\Sprite.h" />
     <ClInclude Include="src\InputSystem.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Tools\dll-Exp-Inp.h" />

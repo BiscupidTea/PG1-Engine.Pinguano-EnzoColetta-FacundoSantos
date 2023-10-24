@@ -21,7 +21,7 @@ void Game::init()
 	rotation = Vector3{ 0,0,0 };
 
 	const char* path = "res/pingu.png";
-	testTexture = new Texture(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
+	testTexture = new Sprite(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
 }
 
 void Game::update()

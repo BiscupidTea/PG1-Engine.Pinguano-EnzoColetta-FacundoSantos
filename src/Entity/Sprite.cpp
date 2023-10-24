@@ -1,24 +1,24 @@
-#include "Entity/Texture.h"
+#include "Entity/Sprite.h"
 
-namespace texture
+namespace sprite
 {
-	Texture::Texture(const char* textureName, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
+	Sprite::Sprite(const char* textureName, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation) : Entity2D(rgba, render, newPosition, newScale, newRotation)
 	{
 		this->width = width;
 		this->height = height;
 
-		CreateTexture();
+		CreateSprite();
 
 		render->CreateVBuffer(vertexPositions, indexs, vertexSize, indexSize, atributeVertexSize, VAO, VBO, EBO, aColorSize, aUvSize);
 		render->BindTexture(textureName, textureId);
 	}
 
-	Texture::~Texture()
+	Sprite::~Sprite()
 	{
 
 	}
 
-	void Texture::CreateTexture()
+	void Sprite::CreateSprite()
 	{
 		vertexSize = 36;
 
@@ -39,7 +39,7 @@ namespace texture
 		};
 	}
 
-	void Texture::Draw()
+	void Sprite::Draw()
 	{
 		DrawTexture();
 	}

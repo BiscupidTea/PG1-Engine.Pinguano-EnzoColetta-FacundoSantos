@@ -3,7 +3,7 @@
 #include "CoreEngine/Renderer.h"
 
 #include "Entity/Shape.h"
-#include "Entity/Texture.h"
+#include "Entity/Sprite.h"
 
 #include "Tools/dll-Exp-Inp.h"
 #include "InputSystem.h"
@@ -11,7 +11,7 @@
 using namespace shape;
 using namespace window;
 using namespace renderer;
-using namespace texture;
+using namespace sprite;
 
 namespace baseEngine
 {
