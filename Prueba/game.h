@@ -14,6 +14,8 @@ private:
 	Vector3 scale;
 	Vector3 rotation;
 
+	Animation* walkAnimation;
+
 public:
 	float width;
 	float height;

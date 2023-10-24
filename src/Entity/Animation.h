@@ -1,6 +1,7 @@
 #pragma once
 #include "Tools/Frame.h"
 #include "Tools/Time.h"
+#include "Tools/dll-Exp-Inp.h"
 #include <iostream>
 #include <vector>
 
@@ -8,7 +9,7 @@ using namespace std;
 
 namespace animation
 {
-	class Animation
+	class EXPORT Animation
 	{
 	private:
 		Time time;
@@ -19,13 +20,13 @@ namespace animation
 
 	public:
 
-		void AddAnimation(
+		Animation(
 			float xPosition, float yPosition,
 			float frameWidth, float frameHeight,
 			float spriteWidth, float spriteHeight,
 			float durationTime);
 
-		void AddAnimation(
+		Animation(
 			float xPosition, float yPosition,
 			float frameWidth, float frameHeight,
 			float spriteWidth, float spriteHeight,

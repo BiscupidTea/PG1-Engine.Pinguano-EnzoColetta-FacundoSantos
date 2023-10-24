@@ -2,10 +2,11 @@
 
 namespace animation
 {
-	void Animation::AddAnimation(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime)
+	Animation::Animation(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime)
 	{
 		animationDuration = durationTime;
 		currentTime = time.GetDeltaTime();
+		currentFrame = 0;
 		Frame frame;
 
 		frame.uvArray[0].u = xPosition / spriteWidth;
@@ -23,9 +24,11 @@ namespace animation
 		frames.push_back(frame);
 	}
 
-	void Animation::AddAnimation(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime, int frameCount)
+	Animation::Animation(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime, int frameCount)
 	{
 		animationDuration = durationTime;
+		currentTime = time.GetDeltaTime();
+		currentFrame = 0;
 		int xCurrentFrame = 0;
 
 		for (int i = 0; i < frameCount; i++)
