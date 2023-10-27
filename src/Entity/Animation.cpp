@@ -56,7 +56,7 @@ namespace animation
 	{
 		currentTime += time.GetDeltaTime() * 1000;
 
-		if (currentTime > animationDuration)
+		while (currentTime > animationDuration)
 		{
 			currentTime -= animationDuration;
 		}

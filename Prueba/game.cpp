@@ -20,7 +20,7 @@ void Game::init()
 	scale = Vector3{ 200,200,1 };
 	rotation = Vector3{ 0,0,0 };
 
-	const char* path = "res/pingu.png";
+	const char* path = "res/Penguin_Walk_Right.png";
 	testTexture = new Sprite(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
 	
 	walkAnimation = new Animation(0,0,133,141,1200,141,10);
@@ -61,7 +61,7 @@ void Game::update()
 		testTexture->setPosition(Vector3{ testTexture->getPosition().x + 1.0f, testTexture->getPosition().y ,0 });
 	}
 
-	/*testTexture->Update();*/
+	testTexture->Update();
 	testTexture->Draw();
 }
 
