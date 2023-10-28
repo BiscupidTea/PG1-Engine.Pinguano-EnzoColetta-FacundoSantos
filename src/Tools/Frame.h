@@ -1,16 +1,18 @@
 #pragma once
 
-struct UV
+namespace frame
 {
-	float u;
-	float v;
-};
+	struct UV
+	{
+		float u;
+		float v;
+	};
 
-class Frame
-{
+	class Frame
+	{
 	private:
 
 	public:
 		UV uvArray[4];
-};
-
+	};
+}

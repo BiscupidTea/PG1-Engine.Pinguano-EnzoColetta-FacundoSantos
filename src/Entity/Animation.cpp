@@ -2,7 +2,12 @@
 
 namespace animation
 {
-	Animation::Animation(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime)
+	Animation::Animation()
+	{
+	
+	}
+
+	void Animation::AddFrame(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime)
 	{
 		animationDuration = durationTime;
 		currentTime = time.GetDeltaTime();
@@ -24,7 +29,7 @@ namespace animation
 		frames.push_back(frame);
 	}
 
-	Animation::Animation(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime, int frameCount)
+	void Animation::AddFrame(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime, int frameCount)
 	{
 		animationDuration = durationTime;
 		currentTime = time.GetDeltaTime();

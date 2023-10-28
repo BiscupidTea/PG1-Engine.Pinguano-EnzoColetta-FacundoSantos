@@ -23,7 +23,8 @@ void Game::init()
 	const char* path = "res/Penguin_Walk_Right.png";
 	testTexture = new Sprite(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
 	
-	walkAnimation = new Animation(0,0,133,141,1200,141,10);
+	walkAnimation = new Animation();
+	walkAnimation->AddFrame(0, 0, 133, 141, 1200, 141, 10);
 
 	testTexture->SetAnimation(walkAnimation);
 }
@@ -61,7 +62,7 @@ void Game::update()
 		testTexture->setPosition(Vector3{ testTexture->getPosition().x + 1.0f, testTexture->getPosition().y ,0 });
 	}
 
-	testTexture->Update();
+	//testTexture->Update();
 	testTexture->Draw();
 }
 

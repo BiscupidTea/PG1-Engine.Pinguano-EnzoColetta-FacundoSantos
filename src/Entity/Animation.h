@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 
+using namespace frame;
 using namespace std;
 
 namespace animation
@@ -20,13 +21,15 @@ namespace animation
 
 	public:
 
-		Animation(
+		Animation();
+
+		void AddFrame(
 			float xPosition, float yPosition,
 			float frameWidth, float frameHeight,
 			float spriteWidth, float spriteHeight,
 			float durationTime);
 
-		Animation(
+		void AddFrame(
 			float xPosition, float yPosition,
 			float frameWidth, float frameHeight,
 			float spriteWidth, float spriteHeight,
