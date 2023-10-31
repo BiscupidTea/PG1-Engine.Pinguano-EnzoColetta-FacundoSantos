@@ -69,17 +69,17 @@ namespace sprite
 		vertexPositions = new float [vertexSize]
 		{
 			// positions		 // colors					// texture coords
-			0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[3].u, frame.uvArray[3].v,   // top right
-			0.5f, -0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[1].u, frame.uvArray[1].v,   // bottom right
 			-0.5f, -0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[0].u, frame.uvArray[0].v,   // bottom left
-			-0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[2].u, frame.uvArray[2].v    // top left 
+			0.5f, -0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[1].u, frame.uvArray[1].v,   // bottom right
+			-0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[2].u, frame.uvArray[2].v,    // top left 
+			0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[3].u, frame.uvArray[3].v   // top right
 		};
 
 		indexSize = 6;
 		indexs = new int[indexSize]
 		{
-			0, 1, 3,
-				1, 2, 3
+			0, 1, 2,
+			1, 2, 3
 		};
 
 		render->CreateVBuffer(vertexPositions, indexs, vertexSize, indexSize, atributeVertexSize, VAO, VBO, EBO, aColorSize, aUvSize);
