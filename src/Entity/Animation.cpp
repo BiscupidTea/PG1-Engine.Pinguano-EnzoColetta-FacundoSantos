@@ -17,14 +17,14 @@ namespace animation
 		frame.uvArray[0].u = xPosition / spriteWidth;
 		frame.uvArray[0].v = yPosition / spriteHeight;
 
-		frame.uvArray[1].u = xPosition + frameWidth / spriteWidth;
+		frame.uvArray[1].u = (xPosition + frameWidth) / spriteWidth;
 		frame.uvArray[1].v = yPosition / spriteHeight;
 
 		frame.uvArray[2].u = xPosition / spriteWidth;
-		frame.uvArray[2].v = yPosition + frameHeight / spriteHeight;
+		frame.uvArray[2].v = (yPosition + frameHeight) / spriteHeight;
 
-		frame.uvArray[3].u = xPosition + frameWidth / spriteWidth;
-		frame.uvArray[3].v = yPosition + frameHeight / spriteHeight;
+		frame.uvArray[3].u = (xPosition + frameWidth) / spriteWidth;
+		frame.uvArray[3].v = (yPosition + frameHeight) / spriteHeight;
 
 		frames.push_back(frame);
 	}
@@ -40,17 +40,17 @@ namespace animation
 		{
 			Frame frame;
 
-			frame.uvArray[0].u = xPosition + xCurrentFrame / spriteWidth;
+			frame.uvArray[0].u = (xPosition + xCurrentFrame) / spriteWidth;
 			frame.uvArray[0].v = yPosition / spriteHeight;
 
-			frame.uvArray[1].u = xPosition + frameWidth + xCurrentFrame / spriteWidth;
+			frame.uvArray[1].u = (xPosition + frameWidth + xCurrentFrame) / spriteWidth;
 			frame.uvArray[1].v = yPosition / spriteHeight;
 
-			frame.uvArray[2].u = xPosition + xCurrentFrame / spriteWidth;
+			frame.uvArray[2].u = (xPosition + xCurrentFrame) / spriteWidth;
 			frame.uvArray[2].v = yPosition + frameHeight / spriteHeight;
 
-			frame.uvArray[3].u = xPosition + frameWidth + xCurrentFrame / spriteWidth;
-			frame.uvArray[3].v = yPosition + frameHeight / spriteHeight;
+			frame.uvArray[3].u = (xPosition + frameWidth + xCurrentFrame) / spriteWidth;
+			frame.uvArray[3].v = (yPosition + frameHeight) / spriteHeight;
 
 			frames.push_back(frame);
 			xCurrentFrame += frameWidth;
