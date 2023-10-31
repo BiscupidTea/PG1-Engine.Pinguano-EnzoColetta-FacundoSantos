@@ -25,7 +25,6 @@ namespace baseEngine
 
 		Renderer* renderer;
 		Window* window;
-		Time* time;
 		ErrorLog errorLog;
 
 	public:

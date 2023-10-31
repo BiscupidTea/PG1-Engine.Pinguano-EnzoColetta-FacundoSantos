@@ -4,11 +4,13 @@
 class Time
 {
 private:
-	float deltaTime = 0;
+	static float deltaTime;
+	static double lastDeltaTime;
 
 public:
 
 	Time();
-	float GetDeltaTime();
+	static void Update(float currentTime);
+	static float GetDeltaTime();
 };
 

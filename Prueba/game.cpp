@@ -16,15 +16,16 @@ Game::~Game()
 void Game::init()
 {
 	colorTest = Vector4{ 1.0f, 1.0f, 1.0f, 1 };
-	position = Vector3{ width/2,height/2,0 };
+	position = Vector3{ width / 2,height / 2,0 };
 	scale = Vector3{ 200,200,1 };
 	rotation = Vector3{ 0,0,0 };
 
 	const char* path = "res/Penguin_Walk_Right.png";
 	testTexture = new Sprite(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
-	
+
 	walkAnimation = new Animation();
-	walkAnimation->AddFrame(0, 0, 133, 141, 1200, 141, 10);
+	walkAnimation->AddFrame(0, 0, 1200 / 9, 141, 1200, 141, 2000);
+	walkAnimation->AddFrame(0, 0, 1200 / 9, 141, 1200, 141, 2000);
 
 	testTexture->SetAnimation(walkAnimation);
 }
@@ -44,25 +45,25 @@ void Game::update()
 
 	if (inputSystem->getKey(inputSystem->s, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y - 1.0f,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y - 0.1f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->w, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y + 1.0f,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y + 0.1f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x - 1.0f, testTexture->getPosition().y ,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x - 0.1f, testTexture->getPosition().y ,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
 	{
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x + 1.0f, testTexture->getPosition().y ,0 });
+		testTexture->setPosition(Vector3{ testTexture->getPosition().x + 0.1f, testTexture->getPosition().y ,0 });
 	}
 
-	//testTexture->Update();
+	testTexture->Update();
 	testTexture->Draw();
 }
 

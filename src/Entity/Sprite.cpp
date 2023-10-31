@@ -24,11 +24,11 @@ namespace sprite
 
 		vertexPositions = new float [vertexSize]
 		{
-			// positions			 // colors					// texture coords
-			0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,   // top right
-			0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,   // bottom right
-			-0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,   // bottom left
-			-0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f    // top left 
+			// positions		 // colors						// texture coords
+			0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,		1.0f, 1.0f,   // top right
+			0.5f, -0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,		1.0f, 0.0f,   // bottom right
+			-0.5f, -0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,		0.0f, 0.0f,   // bottom left
+			-0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,		0.0f, 1.0f    // top left 
 		};
 
 		indexSize = 6;
@@ -48,7 +48,7 @@ namespace sprite
 		else
 		{
 			animation->UpdateAnimation();
-			SetUV(animation->GetCurrentFrame());
+			SetUV(animation->GetFrames()[animation->GetCurrentFrame()]);
 		}
 	}
 
@@ -64,17 +64,25 @@ namespace sprite
 
 	void Sprite::SetUV(Frame frame)
 	{
-		vertexPositions[7] = frame.uvArray->u;
-		vertexPositions[8] = frame.uvArray->v;
+		vertexSize = 36;
 
-		vertexPositions[16] = frame.uvArray->u;
-		vertexPositions[17] = frame.uvArray->v;
+		vertexPositions = new float [vertexSize]
+		{
+			// positions		 // colors					// texture coords
+			0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[3].u, frame.uvArray[3].v,   // top right
+			0.5f, -0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[1].u, frame.uvArray[1].v,   // bottom right
+			-0.5f, -0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[0].u, frame.uvArray[0].v,   // bottom left
+			-0.5f, 0.5f, 0.0f,	 1.0f, 1.0f, 1.0f, 1.0f,	frame.uvArray[2].u, frame.uvArray[2].v    // top left 
+		};
 
-		vertexPositions[25] = frame.uvArray->u;
-		vertexPositions[26] = frame.uvArray->v;
+		indexSize = 6;
+		indexs = new int[indexSize]
+		{
+			0, 1, 3,
+				1, 2, 3
+		};
 
-		vertexPositions[34] = frame.uvArray->u;
-		vertexPositions[35] = frame.uvArray->v;
+		render->CreateVBuffer(vertexPositions, indexs, vertexSize, indexSize, atributeVertexSize, VAO, VBO, EBO, aColorSize, aUvSize);
 	}
 
 }

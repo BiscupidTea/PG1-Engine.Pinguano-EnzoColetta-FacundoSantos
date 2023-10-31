@@ -10,7 +10,7 @@ namespace animation
 	void Animation::AddFrame(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime)
 	{
 		animationDuration = durationTime;
-		currentTime = time.GetDeltaTime();
+		currentTime = 0;
 		currentFrame = 0;
 		Frame frame;
 
@@ -32,7 +32,7 @@ namespace animation
 	void Animation::AddFrame(float xPosition, float yPosition, float frameWidth, float frameHeight, float spriteWidth, float spriteHeight, float durationTime, int frameCount)
 	{
 		animationDuration = durationTime;
-		currentTime = time.GetDeltaTime();
+		currentTime = 0;
 		currentFrame = 0;
 		int xCurrentFrame = 0;
 
@@ -53,25 +53,26 @@ namespace animation
 			frame.uvArray[3].v = yPosition + frameHeight / spriteHeight;
 
 			frames.push_back(frame);
-			xCurrentFrame += spriteWidth;
+			xCurrentFrame += frameWidth;
 		}
 	}
 
 	void Animation::UpdateAnimation()
 	{
-		currentTime += time.GetDeltaTime() * 1000;
+		currentTime += Time::GetDeltaTime() * 1000;
 
 		while (currentTime > animationDuration)
 		{
 			currentTime -= animationDuration;
 		}
 
-		currentFrame = static_cast<int>(currentTime) / animationDuration;
+		float frameLength = animationDuration / frames.size();
+		currentFrame = static_cast<int>(currentTime / frameLength);
 	}
 
-	Frame Animation::GetCurrentFrame()
+	int Animation::GetCurrentFrame()
 	{
-		return frames[currentFrame];
+		return currentFrame;
 	}
 
 	vector<Frame> Animation::GetFrames()

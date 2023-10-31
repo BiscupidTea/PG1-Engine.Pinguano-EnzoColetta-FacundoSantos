@@ -16,8 +16,6 @@ namespace baseEngine
 		renderer = new Renderer(window);
 
 		inputSystem = new InputSystem(window->getWindow());
-
-		time = new Time();
 	}
 
 	BaseGame::~BaseGame()
@@ -30,6 +28,7 @@ namespace baseEngine
 	{
 		while (!glfwWindowShouldClose(window->getWindow()))
 		{
+			Time::Update(glfwGetTime());
 			renderer->StartDraw();
 			update();
 			renderer->EndDraw();

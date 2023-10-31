@@ -13,7 +13,6 @@ namespace animation
 	class EXPORT Animation
 	{
 	private:
-		Time time;
 		float animationDuration;
 		float currentTime;
 		int currentFrame;
@@ -37,7 +36,7 @@ namespace animation
 
 		void UpdateAnimation();
 
-		Frame GetCurrentFrame();
+		int GetCurrentFrame();
 
 		vector<Frame> GetFrames();
 	};
