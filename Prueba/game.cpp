@@ -20,11 +20,13 @@ void Game::init()
 	scale = Vector3{ 200,200,1 };
 	rotation = Vector3{ 0,0,0 };
 
-	const char* path = "res/Penguin_Walk_Right.png";
+	const char* path = "res/Test_Sprite.png";
 	testTexture = new Sprite(path, 200, 200, colorTest, GetRenderer(), position, scale, rotation);
 
+	testTexture->setScale(Vector3{ 400,400,1 });
+
 	walkRightAnimation = new Animation();
-	walkRightAnimation->AddFrame(1200 / 9, 0, 1200 / 9, 141, 1200, 141, 1000, 8);
+	walkRightAnimation->AddFrame(64, 64 * 10, 64, 64, 832, 1344, 1000, 8);
 
 	testTexture->SetAnimation(walkRightAnimation);
 }
