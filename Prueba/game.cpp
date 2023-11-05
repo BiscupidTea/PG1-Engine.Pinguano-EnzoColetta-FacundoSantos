@@ -49,7 +49,7 @@ void Game::init()
 	rotationLeftAnimation = new Animation();
 	rotationLeftAnimation->AddFrame(64, 64 * 15, 64, 64, 832, 1344, 1000, 7);
 	
-	//Walk Down Animation
+	//Idle Animation
 	idleAnimation = new Animation();
 	idleAnimation->AddFrame(64, 64 * 14, 64, 64, 832, 1344, 1000, 7);
 
@@ -103,6 +103,7 @@ void Game::update()
 void Game::exit()
 {
 	delete testTexture;
+
 	delete idleAnimation;
 	delete walkRightAnimation;
 	delete walkLeftAnimation;
