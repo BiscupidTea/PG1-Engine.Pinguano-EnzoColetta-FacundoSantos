@@ -66,6 +66,9 @@
     <ClCompile Include="src\Tools\Frame.cpp">
       <Filter>Src\tools</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -120,6 +123,9 @@
       <Filter>Src\tools</Filter>
     </ClInclude>
     <ClInclude Include="src\Tools\Frame.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
   </ItemGroup>
