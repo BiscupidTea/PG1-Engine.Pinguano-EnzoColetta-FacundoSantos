@@ -14,10 +14,13 @@ private:
 	Vector3 scale;
 	Vector3 rotation;
 
+	Animation* idleAnimation;
 	Animation* walkRightAnimation;
 	Animation* walkLeftAnimation;
 	Animation* walkUpAnimation;
 	Animation* walkDownAnimation;
+	Animation* rotationLeftAnimation;
+	Animation* rotationRightAnimation;
 
 public:
 	float width;
