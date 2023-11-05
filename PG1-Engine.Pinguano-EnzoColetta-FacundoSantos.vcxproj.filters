@@ -66,7 +66,7 @@
     <ClCompile Include="src\Tools\Frame.cpp">
       <Filter>Src\tools</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
+    <ClCompile Include="src\Tools\CollisionManager.cpp">
       <Filter>Src\tools</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,7 +125,7 @@
     <ClInclude Include="src\Tools\Frame.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionManager.h">
+    <ClInclude Include="src\Tools\CollisionManager.h">
       <Filter>Src\tools</Filter>
     </ClInclude>
   </ItemGroup>

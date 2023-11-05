@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="src\CoreEngine\BaseGame.cpp" />
     <ClCompile Include="src\CoreEngine\Renderer.cpp" />
     <ClCompile Include="src\CoreEngine\Window.cpp" />
@@ -30,6 +29,7 @@
     <ClCompile Include="src\Entity\Sprite.cpp" />
     <ClCompile Include="src\InputSystem.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Tools\CollisionManager.cpp" />
     <ClCompile Include="src\Tools\ErrorLog.cpp" />
     <ClCompile Include="src\Tools\Frame.cpp" />
     <ClCompile Include="src\Tools\stb_image.cpp" />
@@ -37,7 +37,6 @@
     <ClCompile Include="src\Tools\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="src\CoreEngine\BaseGame.h" />
     <ClInclude Include="src\CoreEngine\Renderer.h" />
     <ClInclude Include="src\CoreEngine\Window.h" />
@@ -48,6 +47,7 @@
     <ClInclude Include="src\Entity\Sprite.h" />
     <ClInclude Include="src\InputSystem.h" />
     <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\Tools\CollisionManager.h" />
     <ClInclude Include="src\Tools\dll-Exp-Inp.h" />
     <ClInclude Include="src\Tools\ErrorLog.h" />
     <ClInclude Include="src\Tools\Frame.h" />
