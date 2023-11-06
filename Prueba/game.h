@@ -7,12 +7,18 @@ class Game : public BaseGame
 {
 private:
 	const char* windowName;
+	Shape* square;
 	Sprite* testTexture;
 
-	Vector4 colorTest;
-	Vector3 position;
-	Vector3 scale;
-	Vector3 rotation;
+	Vector4 ShaperColor;
+	Vector3 ShapePosition;
+	Vector3 ShaperScale;
+	Vector3 ShapeRotation;
+
+	Vector4 TextureColor;
+	Vector3 TexturePosition;
+	Vector3 TextureScale;
+	Vector3 TextureRotation;
 
 	Animation* idleAnimation;
 	Animation* walkRightAnimation;

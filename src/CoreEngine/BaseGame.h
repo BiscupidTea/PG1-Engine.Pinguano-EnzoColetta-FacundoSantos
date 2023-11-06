@@ -7,12 +7,14 @@
 
 #include "Tools/dll-Exp-Inp.h"
 #include "Tools/Time.h"
+#include "Tools/CollisionManager.h"
 #include "InputSystem.h"
 
 using namespace shape;
 using namespace window;
 using namespace renderer;
 using namespace sprite;
+using namespace collisionManager;
 
 namespace baseEngine
 {
