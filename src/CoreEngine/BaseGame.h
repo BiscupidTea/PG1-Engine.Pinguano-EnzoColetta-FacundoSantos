@@ -15,6 +15,7 @@ using namespace window;
 using namespace renderer;
 using namespace sprite;
 using namespace collisionManager;
+using namespace inputSystem;
 
 namespace baseEngine
 {
