@@ -56,7 +56,7 @@ namespace renderer
 		glUseProgram(0);
 	}
 
-	void Renderer::DrawTexture(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model)
+	void Renderer::DrawTexture(unsigned int VAO, int sizeIndex, Vector4 color, glm::mat4x4 model, unsigned int& idTexture)
 	{
 		glUseProgram(textureShader);
 
@@ -65,7 +65,7 @@ namespace renderer
 		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(MVP));
 
 		glBindVertexArray(VAO);
-
+		glBindTexture(GL_TEXTURE_2D, idTexture);
 		glDrawElements(GL_TRIANGLES, sizeIndex, GL_UNSIGNED_INT, 0);
 
 		glUseProgram(0);

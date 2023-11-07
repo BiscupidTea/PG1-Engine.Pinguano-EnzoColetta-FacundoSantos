@@ -17,22 +17,22 @@ void Game::init()
 {
 	//Init Shape
 	ShaperColor = Vector4{ 0.5f, 0.0f, 0.5f, 1 };;
-	ShapePosition = Vector3{ width / 4,height / 4,0 };
-	ShaperScale = Vector3{ 100,100,1 };;
+	ShapePosition = Vector3{ width / 2,height / 2, 0 };
+	ShaperScale = Vector3{ 64,64,1 };;
 	ShapeRotation = Vector3{ 0,0,0 };;
 
-	square = new Shape(Shape::Square, ShaperColor, GetRenderer(), ShapePosition, ShaperScale, ShapeRotation);
 
 	//Init Texture
 	TextureColor = Vector4{ 1.0f, 1.0f, 1.0f, 1 };
-	TexturePosition = Vector3{ width / 2,height / 2,0 };
-	TextureScale = Vector3{ 200,200,1 };
+	TexturePosition = Vector3{ width / 4,height / 4,0 };
+	TextureScale = Vector3{ 64,64,1 };
 	TextureRotation = Vector3{ 0,0,0 };
 
-	const char* path = "res/Test_Sprite.png";
-	testTexture = new Sprite(path, 200, 200, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
+	const char* path = "res/pingu.png";
+	testTexture2 = new Sprite(path, 64, 64, TextureColor, GetRenderer(), ShapePosition, TextureScale, TextureRotation);
 
-	testTexture->setScale(Vector3{ 200,200,1 });
+	path = "res/Test_Sprite.png";
+	testTexture = new Sprite(path, 64, 64, TextureColor, GetRenderer(), ShapePosition, ShaperScale, ShapeRotation);
 
 	//Walk Down Animation
 	walkDownAnimation = new Animation();
@@ -57,7 +57,7 @@ void Game::init()
 	//Rotation Left Animation
 	rotationLeftAnimation = new Animation();
 	rotationLeftAnimation->AddFrame(64, 64 * 15, 64, 64, 832, 1344, 1000, 7);
-	
+
 	//Idle Animation
 	idleAnimation = new Animation();
 	idleAnimation->AddFrame(64, 64 * 14, 64, 64, 832, 1344, 1000, 7);
@@ -67,12 +67,13 @@ void Game::init()
 
 void Game::update()
 {
-	if (!CollisionManager::CheckCollisionRecRec(square, testTexture))
+	if (!CollisionManager::CheckCollisionRecRec(testTexture, testTexture2))
 	{
 		lastTexturePos = testTexture->getPosition();
 	}
 
 	testTexture->SetAnimation(idleAnimation);
+	testTexture2->SetAnimation(idleAnimation);
 
 	//Inputs
 	if (inputSystem->getKey(inputSystem->q, inputSystem->Pressed))
@@ -112,22 +113,22 @@ void Game::update()
 	}
 
 	//Collider
-	if (CollisionManager::CheckCollisionRecRec(square, testTexture))
+	if (CollisionManager::CheckCollisionRecRec(testTexture, testTexture2))
 	{
 		testTexture->setPosition(lastTexturePos);
 	}
-	
-	square->Draw();
+
 
 	testTexture->Update();
+	testTexture2->Update();
 	testTexture->Draw();
+	testTexture2->Draw();
 }
 
 void Game::exit()
 {
-	delete square;
-
 	delete testTexture;
+	delete testTexture2;
 
 	delete idleAnimation;
 	delete walkRightAnimation;

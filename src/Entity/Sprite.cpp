@@ -54,7 +54,7 @@ namespace sprite
 
 	void Sprite::Draw()
 	{
-		DrawTexture();
+		DrawTexture(textureId);
 	}
 
 	void Sprite::SetAnimation(Animation* animation)

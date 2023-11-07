@@ -27,8 +27,8 @@ namespace Entity2D
 		render->Draw2DEntity(VAO, indexSize, color, model);
 	}
 
-	void Entity2D::DrawTexture()
+	void Entity2D::DrawTexture(unsigned int& idTexture)
 	{
-		render->DrawTexture(VAO, indexSize, color, model);
+		render->DrawTexture(VAO, indexSize, color, model, idTexture);
 	}
 }

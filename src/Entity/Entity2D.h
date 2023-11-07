@@ -33,7 +33,7 @@ namespace Entity2D
 		~Entity2D();
 		
 		void DrawShape();
-		void DrawTexture();
+		void DrawTexture(unsigned int& idTexture);
 
 		void setColor(Vector4 rgba);
 		Vector4 getColor();

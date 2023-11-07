@@ -7,8 +7,8 @@ class Game : public BaseGame
 {
 private:
 	const char* windowName;
-	Shape* square;
 	Sprite* testTexture;
+	Sprite* testTexture2;
 
 	Vector3 lastTexturePos;
 
