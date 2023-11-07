@@ -67,6 +67,11 @@ void Game::init()
 
 void Game::update()
 {
+	if (!CollisionManager::CheckCollisionRecRec(square, testTexture))
+	{
+		lastTexturePos = testTexture->getPosition();
+	}
+
 	testTexture->SetAnimation(idleAnimation);
 
 	//Inputs
@@ -109,7 +114,7 @@ void Game::update()
 	//Collider
 	if (CollisionManager::CheckCollisionRecRec(square, testTexture))
 	{
-		cout << "Colision" << endl;
+		testTexture->setPosition(lastTexturePos);
 	}
 	
 	square->Draw();

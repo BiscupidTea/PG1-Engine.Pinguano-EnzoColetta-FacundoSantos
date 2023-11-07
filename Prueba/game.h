@@ -10,6 +10,8 @@ private:
 	Shape* square;
 	Sprite* testTexture;
 
+	Vector3 lastTexturePos;
+
 	Vector4 ShaperColor;
 	Vector3 ShapePosition;
 	Vector3 ShaperScale;
