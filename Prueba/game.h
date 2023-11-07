@@ -9,8 +9,8 @@ private:
 	const char* windowName;
 	Shape* textureCollider;
 	Shape* textureCollider2;
-	Sprite* testTexture;
-	Sprite* testTexture2;
+	Sprite* Player;
+	Sprite* Enemy;
 
 	Vector3 lastTexturePos;
 
@@ -36,6 +36,8 @@ private:
 	Animation* walkDownAnimation;
 	Animation* rotationLeftAnimation;
 	Animation* rotationRightAnimation;
+
+	Animation* idleAnimationEnemy;
 
 public:
 	float width;

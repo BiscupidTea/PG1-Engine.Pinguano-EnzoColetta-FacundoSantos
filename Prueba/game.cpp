@@ -21,8 +21,8 @@ void Game::init()
 	TextureScale = Vector3{ 64,64,1 };;
 	TextureRotation = Vector3{ 0,0,0 };;
 
-	const char* path = "res/Test_Sprite.png";
-	testTexture = new Sprite(path, 64, 64, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
+	const char* path = "res/Player_Sprite.png";
+	Player = new Sprite(path, 64, 64, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
 	textureCollider = new Shape(Shape::Square, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
 
 	//Init Texture
@@ -31,8 +31,8 @@ void Game::init()
 	TextureScale2 = Vector3{ 64,64,1 };
 	TextureRotation2 = Vector3{ 0,0,0 };
 
-	path = "res/pingu.png";
-	testTexture2 = new Sprite(path, 64, 64, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
+	path = "res/Enemy_Sprite.png";
+	Enemy = new Sprite(path, 64, 64, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
 	textureCollider2 = new Shape(Shape::Square, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
 
 	//Walk Down Animation
@@ -63,79 +63,83 @@ void Game::init()
 	idleAnimation = new Animation();
 	idleAnimation->AddFrame(64, 64 * 14, 64, 64, 832, 1344, 1000, 7);
 
-	testTexture->SetAnimation(walkDownAnimation);
+	idleAnimationEnemy = new Animation();
+	idleAnimationEnemy->AddFrame(64, 64 * 14, 64, 64, 832, 1344, 1000, 7);
+
+	Player->SetAnimation(idleAnimation);
+	Enemy->SetAnimation(idleAnimationEnemy);
 }
 
 void Game::update()
 {
-	if (!CollisionManager::CheckCollisionRecRec(testTexture, testTexture2))
+	if (!CollisionManager::CheckCollisionRecRec(Player, Enemy))
 	{
-		lastTexturePos = testTexture->getPosition();
+		lastTexturePos = Player->getPosition();
 	}
 
-	testTexture->SetAnimation(idleAnimation);
-	testTexture2->SetAnimation(idleAnimation);
+	Player->SetAnimation(idleAnimation);
+	Enemy->SetAnimation(idleAnimationEnemy);
 
 	//Inputs
 	if (inputSystem->getKey(inputSystem->q, inputSystem->Pressed))
 	{
-		testTexture->SetAnimation(rotationLeftAnimation);
-		testTexture->setRotationZ(-1);
+		Player->SetAnimation(rotationLeftAnimation);
+		Player->setRotationZ(-1);
 	}
 
 	if (inputSystem->getKey(inputSystem->e, inputSystem->Pressed))
 	{
-		testTexture->SetAnimation(rotationRightAnimation);
-		testTexture->setRotationZ(1);
+		Player->SetAnimation(rotationRightAnimation);
+		Player->setRotationZ(1);
 	}
 
 	if (inputSystem->getKey(inputSystem->s, inputSystem->Pressed))
 	{
-		testTexture->SetAnimation(walkDownAnimation);
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y - 1.0f,0 });
+		Player->SetAnimation(walkDownAnimation);
+		Player->setPosition(Vector3{ Player->getPosition().x, Player->getPosition().y - 1.0f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->w, inputSystem->Pressed))
 	{
-		testTexture->SetAnimation(walkUpAnimation);
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x, testTexture->getPosition().y + 1.0f,0 });
+		Player->SetAnimation(walkUpAnimation);
+		Player->setPosition(Vector3{ Player->getPosition().x, Player->getPosition().y + 1.0f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
 	{
-		testTexture->SetAnimation(walkLeftAnimation);
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x - 1.0f, testTexture->getPosition().y ,0 });
+		Player->SetAnimation(walkLeftAnimation);
+		Player->setPosition(Vector3{ Player->getPosition().x - 1.0f, Player->getPosition().y ,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
 	{
-		testTexture->SetAnimation(walkRightAnimation);
-		testTexture->setPosition(Vector3{ testTexture->getPosition().x + 1.0f, testTexture->getPosition().y ,0 });
+		Player->SetAnimation(walkRightAnimation);
+		Player->setPosition(Vector3{ Player->getPosition().x + 1.0f, Player->getPosition().y ,0 });
 	}
 
 	//Collider
-	if (CollisionManager::CheckCollisionRecRec(testTexture, testTexture2))
+	if (CollisionManager::CheckCollisionRecRec(Player, Enemy))
 	{
-		testTexture->setPosition(lastTexturePos);
+		Player->setPosition(lastTexturePos);
 	}
 
-	textureCollider->setPosition(testTexture->getPosition());
-	textureCollider2->setPosition(testTexture2->getPosition());
+	textureCollider->setPosition(Player->getPosition());
+	textureCollider2->setPosition(Enemy->getPosition());
 
-	testTexture->Update();
-	testTexture2->Update();
+	Player->Update();
+	Enemy->Update();
 
-	textureCollider->Draw();
-	testTexture->Draw();
+	//textureCollider->Draw();
+	Player->Draw();
 
-	textureCollider2->Draw();
-	testTexture2->Draw();
+	//textureCollider2->Draw();
+	Enemy->Draw();
 }
 
 void Game::exit()
 {
-	delete testTexture;
-	delete testTexture2;
+	delete Player;
+	delete Enemy;
 
 	delete idleAnimation;
 	delete walkRightAnimation;
