@@ -107,10 +107,10 @@ void Game::update()
 	}
 
 	//Collider
-	//if (CollisionManager::CheckCollisionRecRec(square, testTexture))
-	//{
-	//	cout << "Colision" << endl;
-	//}
+	if (CollisionManager::CheckCollisionRecRec(square, testTexture))
+	{
+		cout << "Colision" << endl;
+	}
 	
 	square->Draw();
 

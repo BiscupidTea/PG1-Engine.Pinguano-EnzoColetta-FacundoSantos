@@ -33,6 +33,7 @@ namespace Entity
 
 	void Entity::setPosition(Vector3 newPosition)
 	{
+		position = mat4(1.0);
 		vec3 newPositionSet = { newPosition.x, newPosition.y, newPosition.z };
 		position = translate(position, newPositionSet);
 		UpdateTMatrix();
@@ -40,7 +41,7 @@ namespace Entity
 
 	Vector3 Entity::getPosition()
 	{
-		return { position[0][3], position[1][3], position[2][3] };
+		return { position[3][0], position[3][1], position[3][2] };
 	}
 
 	void Entity::setScale(Vector3 newScale)
