@@ -7,6 +7,8 @@ class Game : public BaseGame
 {
 private:
 	const char* windowName;
+	Shape* textureCollider;
+	Shape* textureCollider2;
 	Sprite* testTexture;
 	Sprite* testTexture2;
 
@@ -21,6 +23,11 @@ private:
 	Vector3 TexturePosition;
 	Vector3 TextureScale;
 	Vector3 TextureRotation;
+
+	Vector4 TextureColor2;
+	Vector3 TexturePosition2;
+	Vector3 TextureScale2;
+	Vector3 TextureRotation2;
 
 	Animation* idleAnimation;
 	Animation* walkRightAnimation;

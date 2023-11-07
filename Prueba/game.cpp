@@ -16,23 +16,24 @@ Game::~Game()
 void Game::init()
 {
 	//Init Shape
-	ShaperColor = Vector4{ 0.5f, 0.0f, 0.5f, 1 };;
-	ShapePosition = Vector3{ width / 2,height / 2, 0 };
-	ShaperScale = Vector3{ 64,64,1 };;
-	ShapeRotation = Vector3{ 0,0,0 };;
+	TextureColor = Vector4{ 0.5f, 0.0f, 0.5f, 1 };;
+	TexturePosition = Vector3{ width / 2,height / 2, 0 };
+	TextureScale = Vector3{ 64,64,1 };;
+	TextureRotation = Vector3{ 0,0,0 };;
 
+	const char* path = "res/Test_Sprite.png";
+	testTexture = new Sprite(path, 64, 64, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
+	textureCollider = new Shape(Shape::Square, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
 
 	//Init Texture
-	TextureColor = Vector4{ 1.0f, 1.0f, 1.0f, 1 };
-	TexturePosition = Vector3{ width / 4,height / 4,0 };
-	TextureScale = Vector3{ 64,64,1 };
-	TextureRotation = Vector3{ 0,0,0 };
+	TextureColor2 = Vector4{ 1.0f, 1.0f, 1.0f, 1 };
+	TexturePosition2 = Vector3{ width / 4,height / 4,0 };
+	TextureScale2 = Vector3{ 64,64,1 };
+	TextureRotation2 = Vector3{ 0,0,0 };
 
-	const char* path = "res/pingu.png";
-	testTexture2 = new Sprite(path, 64, 64, TextureColor, GetRenderer(), ShapePosition, TextureScale, TextureRotation);
-
-	path = "res/Test_Sprite.png";
-	testTexture = new Sprite(path, 64, 64, TextureColor, GetRenderer(), ShapePosition, ShaperScale, ShapeRotation);
+	path = "res/pingu.png";
+	testTexture2 = new Sprite(path, 64, 64, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
+	textureCollider2 = new Shape(Shape::Square, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
 
 	//Walk Down Animation
 	walkDownAnimation = new Animation();
@@ -118,10 +119,16 @@ void Game::update()
 		testTexture->setPosition(lastTexturePos);
 	}
 
+	textureCollider->setPosition(testTexture->getPosition());
+	textureCollider2->setPosition(testTexture2->getPosition());
 
 	testTexture->Update();
 	testTexture2->Update();
+
+	textureCollider->Draw();
 	testTexture->Draw();
+
+	textureCollider2->Draw();
 	testTexture2->Draw();
 }
 
