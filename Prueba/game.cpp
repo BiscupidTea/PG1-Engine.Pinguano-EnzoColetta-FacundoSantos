@@ -16,136 +16,101 @@ Game::~Game()
 void Game::init()
 {
 	//Init Shape
-	TextureColor = Vector4{ 0.5f, 0.0f, 0.5f, 1 };;
+	TextureColor = Vector4{ 1.0f, 1.0f, 1.0f, 1 };
 	TexturePosition = Vector3{ width / 2,height / 2, 0 };
 	TextureScale = Vector3{ 64,64,1 };;
 	TextureRotation = Vector3{ 0,0,0 };;
 
-	const char* path = "res/Player_Sprite.png";
-	Player = new Sprite(path, 64, 64, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
-	textureCollider = new Shape(Shape::Square, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
+	const char* path = "res/Sonic_Mania_Sprite_Sheet.png";
+	Sonic = new Sprite(path, 64, 64, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
 
 	//Init Texture
-	TextureColor2 = Vector4{ 1.0f, 1.0f, 1.0f, 1 };
-	TexturePosition2 = Vector3{ width / 4,height / 4,0 };
-	TextureScale2 = Vector3{ 64,64,1 };
-	TextureRotation2 = Vector3{ 0,0,0 };
+	TexturePosition2 = Vector3{ width / 4,height / 2,0 };
 
-	path = "res/Enemy_Sprite.png";
-	Enemy = new Sprite(path, 64, 64, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
-	textureCollider2 = new Shape(Shape::Square, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
+	Cartel = new Sprite(path, 64, 64, TextureColor2, GetRenderer(), TexturePosition2, TextureScale, TextureRotation);
 
-	//Walk Down Animation
-	walkDownAnimation = new Animation();
-	walkDownAnimation->AddFrame(64, 64 * 10, 64, 64, 832, 1344, 1000, 8);
-
-	//Walk Right Animation
-	walkRightAnimation = new Animation();
-	walkRightAnimation->AddFrame(64, 64 * 9, 64, 64, 832, 1344, 1000, 8);
-
-	//Walk Left Animation
-	walkLeftAnimation = new Animation();
-	walkLeftAnimation->AddFrame(64, 64 * 11, 64, 64, 832, 1344, 1000, 8);
-
-	//Walk Up Animation
-	walkUpAnimation = new Animation();
-	walkUpAnimation->AddFrame(64, 64 * 12, 64, 64, 832, 1344, 1000, 8);
-
-	//Rotation Left Animation
-	rotationRightAnimation = new Animation();
-	rotationRightAnimation->AddFrame(64, 64 * 13, 64, 64, 832, 1344, 1000, 7);
-
-	//Rotation Left Animation
-	rotationLeftAnimation = new Animation();
-	rotationLeftAnimation->AddFrame(64, 64 * 15, 64, 64, 832, 1344, 1000, 7);
+	path = "res/map.png";
+	Fondo = new Sprite(path, 900, 507, TextureColor2, GetRenderer(), Vector3{ 0+450,0+507/2, 0 }, Vector3{ 900,507, 0 }, TextureRotation);
 
 	//Idle Animation
+	walkAnimation = new Animation();
+	walkAnimation->AddFrame(848, 203, 122/3, 48, 830, 465, 1000, 3);
+
 	idleAnimation = new Animation();
-	idleAnimation->AddFrame(64, 64 * 14, 64, 64, 832, 1344, 1000, 7);
+	idleAnimation->AddFrame(390, 98, 98 / 3, 43, 830, 465, 2500, 3);
 
-	idleAnimationEnemy = new Animation();
-	idleAnimationEnemy->AddFrame(64, 64 * 14, 64, 64, 832, 1344, 1000, 7);
+	idleAnimationCartel = new Animation();
+	idleAnimationCartel->AddFrame(133, 150, 49.5 , 100, 832, 830, 465, 4);
 
-	Player->SetAnimation(idleAnimation);
-	Enemy->SetAnimation(idleAnimationEnemy);
+	Sonic->SetAnimation(idleAnimation);
+	Cartel->SetAnimation(idleAnimationCartel);
 }
 
 void Game::update()
 {
-	if (!CollisionManager::CheckCollisionRecRec(Player, Enemy))
+	if (!CollisionManager::CheckCollisionRecRec(Sonic, Cartel))
 	{
-		lastTexturePos = Player->getPosition();
+		lastTexturePos = Sonic->getPosition();
 	}
-
-	Player->SetAnimation(idleAnimation);
-	Enemy->SetAnimation(idleAnimationEnemy);
+	Sonic->SetAnimation(idleAnimation);
 
 	//Inputs
 	if (inputSystem->getKey(inputSystem->q, inputSystem->Pressed))
 	{
-		Player->SetAnimation(rotationLeftAnimation);
-		Player->setRotationZ(-1);
+		Sonic->SetAnimation(walkAnimation);
+		Sonic->setRotationZ(-1);
 	}
 
 	if (inputSystem->getKey(inputSystem->e, inputSystem->Pressed))
 	{
-		Player->SetAnimation(rotationRightAnimation);
-		Player->setRotationZ(1);
+		Sonic->SetAnimation(walkAnimation);
+		Sonic->setRotationZ(1);
 	}
 
 	if (inputSystem->getKey(inputSystem->s, inputSystem->Pressed))
 	{
-		Player->SetAnimation(walkDownAnimation);
-		Player->setPosition(Vector3{ Player->getPosition().x, Player->getPosition().y - 1.0f,0 });
+		Sonic->SetAnimation(walkAnimation);
+		Sonic->setPosition(Vector3{ Sonic->getPosition().x, Sonic->getPosition().y - 1.0f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->w, inputSystem->Pressed))
 	{
-		Player->SetAnimation(walkUpAnimation);
-		Player->setPosition(Vector3{ Player->getPosition().x, Player->getPosition().y + 1.0f,0 });
+		Sonic->SetAnimation(walkAnimation);
+		Sonic->setPosition(Vector3{ Sonic->getPosition().x, Sonic->getPosition().y + 1.0f,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->a, inputSystem->Pressed))
 	{
-		Player->SetAnimation(walkLeftAnimation);
-		Player->setPosition(Vector3{ Player->getPosition().x - 1.0f, Player->getPosition().y ,0 });
+		Sonic->SetAnimation(walkAnimation);
+		Sonic->setPosition(Vector3{ Sonic->getPosition().x - 1.0f, Sonic->getPosition().y ,0 });
 	}
 
 	if (inputSystem->getKey(inputSystem->d, inputSystem->Pressed))
 	{
-		Player->SetAnimation(walkRightAnimation);
-		Player->setPosition(Vector3{ Player->getPosition().x + 1.0f, Player->getPosition().y ,0 });
+		Sonic->SetAnimation(walkAnimation);
+		Sonic->setPosition(Vector3{ Sonic->getPosition().x + 1.0f, Sonic->getPosition().y ,0 });
 	}
 
 	//Collider
-	if (CollisionManager::CheckCollisionRecRec(Player, Enemy))
+	if (CollisionManager::CheckCollisionRecRec(Sonic, Cartel))
 	{
-		Player->setPosition(lastTexturePos);
+		Sonic->setPosition(lastTexturePos);
 	}
 
-	textureCollider->setPosition(Player->getPosition());
-	textureCollider2->setPosition(Enemy->getPosition());
+	Sonic->Update();
+	Cartel->Update();
 
-	Player->Update();
-	Enemy->Update();
-
-	//textureCollider->Draw();
-	Player->Draw();
-
-	//textureCollider2->Draw();
-	Enemy->Draw();
+	Fondo->Draw();
+	Sonic->Draw();
+	Cartel->Draw();
 }
 
 void Game::exit()
 {
-	delete Player;
-	delete Enemy;
+	delete Sonic;
+	delete Cartel;
 
 	delete idleAnimation;
-	delete walkRightAnimation;
-	delete walkLeftAnimation;
-	delete walkUpAnimation;
-	delete walkDownAnimation;
-	delete rotationLeftAnimation;
-	delete rotationRightAnimation;
+	delete idleAnimationCartel;
+	delete walkAnimation;
 }
