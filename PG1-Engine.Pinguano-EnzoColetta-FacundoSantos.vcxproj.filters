@@ -10,70 +10,130 @@
     <Filter Include="Res\Shader">
       <UniqueIdentifier>{8fa5aa9c-d326-41c3-90eb-994834370889}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\CoreEngine">
+      <UniqueIdentifier>{0b11736f-96f0-4ae3-bed8-0e3229a58caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Entity">
+      <UniqueIdentifier>{92102be6-c52f-42ce-87ec-1d1b83d932b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\tools">
+      <UniqueIdentifier>{5e9e4c61-cc0b-4531-9e8f-ec6bab979526}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Window.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Renderer.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BaseGame.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Entity.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shape.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Shader.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="src\ErrorLog.cpp">
+    <ClCompile Include="src\InputSystem.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entity2D.cpp">
-      <Filter>Src</Filter>
+    <ClCompile Include="src\CoreEngine\BaseGame.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CoreEngine\Renderer.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CoreEngine\Window.cpp">
+      <Filter>Src\CoreEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Entity.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Entity2D.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Shape.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Sprite.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tools\ErrorLog.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tools\TextureImporter.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tools\stb_image.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Animation.cpp">
+      <Filter>Src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tools\Time.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tools\Frame.cpp">
+      <Filter>Src\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tools\CollisionManager.cpp">
+      <Filter>Src\tools</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Window.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Renderer.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BaseGame.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Entity.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vectors.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shape.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="src\Shader.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="src\ErrorLog.h">
+    <ClInclude Include="src\InputSystem.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="src\glm_math.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="src\CoreEngine\BaseGame.h">
+      <Filter>Src\CoreEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\dll-Exp-Inp.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="src\CoreEngine\Renderer.h">
+      <Filter>Src\CoreEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\Entity2D.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="src\CoreEngine\Window.h">
+      <Filter>Src\CoreEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Entity.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Entity2D.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Shape.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Sprite.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\dll-Exp-Inp.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\ErrorLog.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\glm_math.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\TextureImporter.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\Vectors.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\stb_image.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Animation.h">
+      <Filter>Src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\Time.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\Frame.h">
+      <Filter>Src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tools\CollisionManager.h">
+      <Filter>Src\tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\Shader\Basic.Shader">
+    <None Include="Prueba\res\Shader\Primitive.Shader">
+      <Filter>Res\Shader</Filter>
+    </None>
+    <None Include="Prueba\res\Shader\Texture.Shader">
       <Filter>Res\Shader</Filter>
     </None>
   </ItemGroup>

@@ -1,4 +1,4 @@
-#include "Shape.h"
+#include "Entity/Shape.h"
 
 namespace shape
 {
@@ -59,5 +59,10 @@ namespace shape
 
 		atributeVertexSize = 3;
 		render->CreateVBuffer(vertexPositions, indexs, vertexSize, indexSize, atributeVertexSize, VAO, VBO, EBO);
+	}
+
+	void Shape::Draw()
+	{
+		DrawShape();
 	}
 }

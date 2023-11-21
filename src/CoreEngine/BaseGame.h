@@ -1,17 +1,21 @@
 #pragma once
+#include "CoreEngine/Window.h"
+#include "CoreEngine/Renderer.h"
 
-#include "dll-Exp-Inp.h"
-#include "Shape.h"
-#include "Window.h"
-#include "Shader.h"
-#include "Renderer.h"
-#include "ErrorLog.h"
+#include "Entity/Shape.h"
+#include "Entity/Sprite.h"
+
+#include "Tools/dll-Exp-Inp.h"
+#include "Tools/Time.h"
+#include "Tools/CollisionManager.h"
+#include "InputSystem.h"
 
 using namespace shape;
 using namespace window;
 using namespace renderer;
-using namespace shader;
-using namespace errorLog;
+using namespace sprite;
+using namespace collisionManager;
+using namespace inputSystem;
 
 namespace baseEngine
 {
@@ -28,6 +32,7 @@ namespace baseEngine
 
 	public:
 
+		InputSystem* inputSystem;
 		BaseGame(int width, int height, const char* windowName);
 		~BaseGame();
 		void gameLoop();

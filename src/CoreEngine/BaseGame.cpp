@@ -1,5 +1,5 @@
 #include <iostream>
-#include "BaseGame.h"
+#include "CoreEngine/BaseGame.h"
 
 using namespace std;
 
@@ -14,6 +14,8 @@ namespace baseEngine
 		errorLog.CheckGlewInit();
 
 		renderer = new Renderer(window);
+
+		inputSystem = new InputSystem(window->getWindow());
 	}
 
 	BaseGame::~BaseGame()
@@ -26,6 +28,7 @@ namespace baseEngine
 	{
 		while (!glfwWindowShouldClose(window->getWindow()))
 		{
+			Time::Update(glfwGetTime());
 			renderer->StartDraw();
 			update();
 			renderer->EndDraw();
