@@ -13,6 +13,7 @@ int main(void)
 
     game = new Game(width, height, windowName);
 
+
     game->gameLoop();
 
     delete game;

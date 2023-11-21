@@ -7,10 +7,9 @@ class Game : public BaseGame
 {
 private:
 	const char* windowName;
-	Shape* textureCollider;
-	Shape* textureCollider2;
+	Sprite* Letter;
+	Sprite* BackGround;
 	Sprite* Player;
-	Sprite* Enemy;
 
 	Vector3 lastTexturePos;
 
@@ -20,9 +19,12 @@ private:
 	Vector3 ShapeRotation;
 
 	Vector4 TextureColor;
-	Vector3 TexturePosition;
-	Vector3 TextureScale;
+	Vector3 BackgroundPos;
+	Vector3 BackgroundScale;
 	Vector3 TextureRotation;
+
+	Vector3 PlayerPos;
+
 
 	Vector4 TextureColor2;
 	Vector3 TexturePosition2;
@@ -30,14 +32,9 @@ private:
 	Vector3 TextureRotation2;
 
 	Animation* idleAnimation;
-	Animation* walkRightAnimation;
-	Animation* walkLeftAnimation;
-	Animation* walkUpAnimation;
-	Animation* walkDownAnimation;
-	Animation* rotationLeftAnimation;
-	Animation* rotationRightAnimation;
-
-	Animation* idleAnimationEnemy;
+	Animation* BackgroundAnimation;
+	Animation* runAnimation;
+	Animation* playerIdle;
 
 public:
 	float width;
