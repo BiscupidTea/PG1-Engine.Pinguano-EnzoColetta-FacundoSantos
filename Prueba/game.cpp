@@ -22,15 +22,15 @@ void Game::init()
 	TextureRotation = Vector3{ 0,0,0 };;
 
 	const char* path = "res/Sonic_Mania_Sprite_Sheet.png";
-	Sonic = new Sprite(path, 64, 64, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
+	Sonic = new Sprite(path, TextureColor, GetRenderer(), TexturePosition, TextureScale, TextureRotation);
 
 	//Init Texture
 	TexturePosition2 = Vector3{ width / 4,height / 2,0 };
 
-	Cartel = new Sprite(path, 64, 64, TextureColor2, GetRenderer(), TexturePosition2, TextureScale, TextureRotation);
+	Cartel = new Sprite(path, TextureColor2, GetRenderer(), TexturePosition2, TextureScale, TextureRotation);
 
 	path = "res/map.png";
-	Fondo = new Sprite(path, 900, 507, TextureColor2, GetRenderer(), Vector3{ 0+450,0+507/2, 0 }, Vector3{ 900,507, 0 }, TextureRotation);
+	Fondo = new Sprite(path, TextureColor2, GetRenderer(), Vector3{ 0+450,0+507/2, 0 }, Vector3{ 900,507, 0 }, TextureRotation);
 
 	//Idle Animation
 	walkAnimation = new Animation();
