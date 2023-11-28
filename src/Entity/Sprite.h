@@ -16,7 +16,7 @@ namespace sprite
 		Animation* animation;
 
 	public:
-		Sprite(const char* textureName, int width, int height, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
+		Sprite(const char* textureName, Vector4 rgba, Renderer* render, Vector3 newPosition, Vector3 newScale, Vector3 newRotation);
 		~Sprite();
 
 		void CreateSprite();

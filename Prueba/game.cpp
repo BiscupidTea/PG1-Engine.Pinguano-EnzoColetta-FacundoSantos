@@ -23,7 +23,7 @@ void Game::init()
 	TextureRotation2 = Vector3{ 0,0,0 };
 
 	const char* path = "res/Sonic_Mania_Sprite_Sheet.png";
-	Letter = new Sprite(path, 49, 48, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
+	Letter = new Sprite(path, TextureColor2, GetRenderer(), TexturePosition2, TextureScale2, TextureRotation2);
 
 	//Idle Animation
 	idleAnimation = new Animation();
@@ -35,12 +35,12 @@ void Game::init()
 	BackgroundScale = Vector3{ 640, 480,1 };
 
 	const char* pathBackground = "res/Background.png";
-	BackGround = new Sprite(pathBackground, width, height, TextureColor2, GetRenderer(), BackgroundPos, BackgroundScale, TextureRotation2);
+	BackGround = new Sprite(pathBackground, TextureColor2, GetRenderer(), BackgroundPos, BackgroundScale, TextureRotation2);
 
 	//RunAnimation
 	PlayerPos = Vector3{ width / 2,height / 2,0 };
 
-	Player = new Sprite(path, 35, 50, TextureColor2, GetRenderer(), PlayerPos, TextureScale2, TextureRotation2);
+	Player = new Sprite(path, TextureColor2, GetRenderer(), PlayerPos, TextureScale2, TextureRotation2);
 
 	runAnimation = new Animation();
 	runAnimation->AddFrame(286, 250, 35, 50, 830, 465, 50, 3);
@@ -115,7 +115,14 @@ void Game::update()
 
 void Game::exit()
 {
+	delete windowName;
+
 	delete Letter;
+	delete BackGround;
+	delete Player;
 
 	delete idleAnimation;
+	delete BackgroundAnimation;
+	delete runAnimation;
+	delete playerIdle;
 }
