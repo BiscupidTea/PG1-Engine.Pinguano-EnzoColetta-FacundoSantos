@@ -34,7 +34,7 @@ void Game::init()
 
 	//Idle Animation
 	walkAnimation = new Animation();
-	walkAnimation->AddFrame(848, 203, 122/3, 48, 830, 465, 1000, 3);
+	walkAnimation->AddFrame(848, 203, 122/3, 48, 830, 465, 500, 3);
 
 	idleAnimation = new Animation();
 	idleAnimation->AddFrame(390, 98, 98 / 3, 43, 830, 465, 2500, 3);
