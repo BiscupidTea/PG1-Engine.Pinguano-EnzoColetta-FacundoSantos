@@ -11,8 +11,6 @@ namespace sprite
 	class EXPORT Sprite : public Entity2D
 	{
 	private:
-		int width;
-		int height;
 		Animation* animation;
 
 	public:
