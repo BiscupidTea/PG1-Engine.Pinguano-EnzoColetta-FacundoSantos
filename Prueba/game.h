@@ -7,24 +7,19 @@ class Game : public BaseGame
 {
 private:
 	const char* windowName;
-	Sprite* Sonic;
-	Sprite* Cartel;
-	Sprite* Fondo;
+	Shape* triangle1;
+	Shape* triangle2;
+	Shape* triangle3;
+	
+	Vector4 colorTriangleFront;
+	Vector4 colorTriangleBack;
 
-	Vector3 lastTexturePos;
+	Vector3 position;
+	Vector3 position2;
+	Vector3 position3;
 
-	Vector4 TextureColor;
-	Vector3 TexturePosition;
-	Vector3 TextureScale;
-	Vector3 TextureRotation;
-
-	Vector4 TextureColor2;
-	Vector3 TexturePosition2;
-
-	Animation* idleAnimation;
-	Animation* walkAnimation;
-
-	Animation* idleAnimationCartel;
+	Vector3 scale;
+	Vector3 rotation;
 
 public:
 	float width;
