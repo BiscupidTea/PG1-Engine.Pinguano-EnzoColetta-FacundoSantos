@@ -18,33 +18,37 @@ Game::~Game()
 
 void Game::init()
 {
-	colorTriangle = Vector4{ 1.0f, 0.5f, 0.0f, 1 };
-	Vector4 colorTriangle2 = Vector4{ 1.0f, 0.0f, 0.5f, 1 };
-	position = Vector3{ width / 2, height,0 };
-	scale = Vector3{ 1,1,1 };
+	//Triangle 1
+	colorTriangleFront = Vector4{ 1.0f, 1.0f, 0.0f, 1 };
+	colorTriangleBack = Vector4{ 1.0f, 1.0f, 0.0f, 1 };
+	position = Vector3{ width / 2, height / 2,-50 };
+	scale = Vector3{ 60.0f, 60.0f,60.0f };
 	rotation = Vector3{ 0,0,0 };
+	triangle1 = new Shape(Shape::typeShapes::Triangle, colorTriangleFront, GetRenderer(), position, scale, rotation);
 
-	Vector3	scale2 = Vector3{ 50,50,50 };
+	//Triangle 2
+	position2 = Vector3{ width / 2.21f, height / 2.65f, -50 };
+	triangle2 = new Shape(Shape::typeShapes::Triangle, colorTriangleFront, GetRenderer(), position2, scale, rotation);
 
-	Vector3 position2 = Vector3{ width - scale2.x, height /2,0 };
-
-	triangle = new Shape(Shape::typeShapes::Triangle, colorTriangle, GetRenderer(), position, scale, rotation);
-	Aimy = new Shape(Shape::typeShapes::Triangle, colorTriangle2, GetRenderer(), position2, scale2, rotation);
+	//Triangle 3
+	position3 = Vector3{ width / 1.83f, height / 2.65f, -50 };
+	triangle3 = new Shape(Shape::typeShapes::Triangle, colorTriangleFront, GetRenderer(), position3, scale, rotation);
 }
 
 void Game::update()
 {
-	triangle->setPosition(Vector3{ triangle->getPosition().x, triangle->getPosition().y - 1.0f,0 });
-	Vector3 scale = triangle->getScale();
+	triangle1->setRotationY(1);
+	triangle2->setRotationY(1);
+	triangle3->setRotationY(1);
 
-	triangle->setScale({triangle->getScale().x + 1.f , triangle->getScale().y + 1.f ,1.f });
-
-	triangle->Draw();
-	Aimy->Draw();
+	triangle1->Draw();
+	triangle2->Draw();
+	triangle3->Draw();
 }
 
 void Game::exit()
 {
-	delete triangle;
-	delete Aimy;
+	delete triangle1;
+	delete triangle2;
+	delete triangle3;
 }
