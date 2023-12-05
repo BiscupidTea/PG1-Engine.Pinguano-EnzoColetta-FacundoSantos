@@ -8,10 +8,14 @@ class Game : public BaseGame
 private:
 	const char* windowName;
 	Sprite* Sonic;
+	Sprite* Pikachu;
 	Sprite* Cartel;
 	Sprite* Fondo;
+	Sprite* Logo;
+	Sprite* Credits;
 
 	Vector3 lastTexturePos;
+	Vector3 lastTexturePosP;
 
 	Vector4 TextureColor;
 	Vector3 TexturePosition;
@@ -21,10 +25,15 @@ private:
 	Vector4 TextureColor2;
 	Vector3 TexturePosition2;
 
-	Animation* idleAnimation;
-	Animation* walkAnimation;
+	Animation* idleAnimationSonic;
+	Animation* walkAnimationSonic;
+
+	Animation* idleAnimationPikachu;
+	Animation* walkAnimationPikachu;
 
 	Animation* idleAnimationCartel;
+	Animation* idleAnimationLogo;
+	Animation* idleAnimationCreditos;
 
 public:
 	float width;
