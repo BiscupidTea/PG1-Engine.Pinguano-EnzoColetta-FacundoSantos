@@ -17,8 +17,8 @@ void Game::init()
 {
 	const char* tileMapFiles[] = 
 	{
-		"res/Tilemap/PruebaTereno_Terreno.csv",
-		"res/Tilemap/PruebaTereno_Obstaculos.csv"
+		"res/Tilemap/Map_Ground.csv",
+		"res/Tilemap/Map_Obstacles.csv"
 	};
 
 	//Init Texture
@@ -55,8 +55,8 @@ void Game::init()
 	Letter->SetAnimation(idleAnimation);
 	Player->SetAnimation(playerIdle);
 
-	tilemap = new Tilemap("res/Tilemap/TilesJunto.tsx", {tileMapFiles[0], tileMapFiles[1]}, "res/Tilemap/tilemap_packed.png", 
-		                   TextureColor2, GetRenderer(), Vector3{ 100, 400, 0 }, Vector3{ 40, 40, 1 }, Vector3{ 0, 0, 0 });
+	tilemap = new Tilemap("res/Tilemap/Tilemap_Dungeon_original_size.tsx", {tileMapFiles[0], tileMapFiles[1]}, "res/Tilemap/Tilemap_Dungeon_original_size.png", 
+		                   TextureColor2, GetRenderer(), Vector3{ 20, 400, 0 }, Vector3{ 20, 20, 1 }, Vector3{ 0, 0, 0 });
 }
 
 void Game::update()
@@ -116,8 +116,6 @@ void Game::update()
 	{
 		Player->setPosition(lastTexturePos);
 	}
-
-
 
 	//Update
 	Letter->Update();
